@@ -17,12 +17,9 @@ public class BasicEnemy : MonoBehaviour
     void Update()
     {
        if (target.transform.position.x != this.transform.position.x)
-        {
-           rb.velocity = new Vector2 (target.transform.position.x - transform.position.x, transform.position.y);
-        }
+            rb.velocity = new Vector2 (target.transform.position.x - transform.position.x, transform.position.y);
+
        else if (target.transform.position.y != this.transform.position.y)
-        {
             rb.velocity = new Vector2(transform.position.x, target.transform.position.y - transform.position.y);
-        }
     }
 }
