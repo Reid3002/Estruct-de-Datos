@@ -29,7 +29,7 @@ public class NpcController : MonoBehaviour
     {
         if (inQeue)
         {
-            if (index > 1)
+            if (index > 2)
             {
                 this.desiredDirection = nextInLine.GetComponent<NpcController>().lastSuccessfulDirection;
             }
@@ -37,38 +37,39 @@ public class NpcController : MonoBehaviour
             {
                 this.desiredDirection = GetPlayerDirection();
             }
-        }
 
-        if (this.currentStepTime > 0)
-            this.currentStepTime -= Time.deltaTime;
-        else
-        {
-            if ((this.desiredDirection == Direction.Up || this.desiredDirection == Direction.Down) && IsRoundNumber(this.transform.position.x))
-                this.lastSuccessfulDirection = this.desiredDirection;
-            else if ((this.desiredDirection == Direction.Left || this.desiredDirection == Direction.Right) && IsRoundNumber(this.transform.position.y))
-                this.lastSuccessfulDirection = this.desiredDirection;
 
-            Vector3 newDirection = Vector3.zero;
-
-            switch (this.lastSuccessfulDirection)
+            if (this.currentStepTime > 0)
+                this.currentStepTime -= Time.deltaTime;
+            else
             {
-                case Direction.Up:
-                    newDirection = Vector3.up;
-                    break;
-                case Direction.Down:
-                    newDirection = Vector3.down;
-                    break;
-                case Direction.Left:
-                    newDirection = Vector3.left;
-                    break;
-                case Direction.Right:
-                    newDirection = Vector3.right;
-                    break;
-            }
+                if ((this.desiredDirection == Direction.Up || this.desiredDirection == Direction.Down) && IsRoundNumber(this.transform.position.x))
+                    this.lastSuccessfulDirection = this.desiredDirection;
+                else if ((this.desiredDirection == Direction.Left || this.desiredDirection == Direction.Right) && IsRoundNumber(this.transform.position.y))
+                    this.lastSuccessfulDirection = this.desiredDirection;
 
-            this.transform.position += newDirection * stepAmount;
-            this.transform.position = ForceRoundPosition(this.transform.position);
-            this.currentStepTime = this.stepTime;
+                Vector3 newDirection = Vector3.zero;
+
+                switch (this.lastSuccessfulDirection)
+                {
+                    case Direction.Up:
+                        newDirection = Vector3.up;
+                        break;
+                    case Direction.Down:
+                        newDirection = Vector3.down;
+                        break;
+                    case Direction.Left:
+                        newDirection = Vector3.left;
+                        break;
+                    case Direction.Right:
+                        newDirection = Vector3.right;
+                        break;
+                }
+
+                this.transform.position += newDirection * stepAmount;
+                this.transform.position = ForceRoundPosition(this.transform.position);
+                this.currentStepTime = this.stepTime;
+            }
         }
     }
 
@@ -115,6 +116,11 @@ public class NpcController : MonoBehaviour
 
             default: return Direction.None;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        GameObject.Find("Game Manager").GetComponent<QueueManager>().AddToQueue(this.gameObject);
     }
 }
 
