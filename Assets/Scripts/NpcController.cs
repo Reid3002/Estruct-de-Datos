@@ -18,13 +18,18 @@ public class NpcController : MonoBehaviour
     public Direction lastSuccessfulDirection = Direction.None;
     public Direction desiredDirection = Direction.None;
 
-    // Start is called before the first frame update
+   //Start is called before the first frame update
     void Start()
     {
         this.currentStepTime = this.stepTime;
     }
 
-    // Update is called once per frame
+    private void FixedUpdate()
+    {
+        
+    }
+
+    //Update is called once per frame
     void Update()
     {
         if (inQeue)
@@ -120,7 +125,11 @@ public class NpcController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject.Find("Game Manager").GetComponent<QueueManager>().AddToQueue(this.gameObject);
+        if (inQeue == false)
+        {
+          GameObject.Find("Game Manager").GetComponent<QueueManager>().AddToQueue(this.gameObject);
+        }
+        
     }
 }
 

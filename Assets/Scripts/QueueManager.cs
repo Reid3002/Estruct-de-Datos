@@ -7,13 +7,14 @@ public class QueueManager : MonoBehaviour
    private Queue<GameObject> snake = new Queue<GameObject>();
    public int index;
    private GameObject lastObjectAdded;
-    private float offSet = 3.0f;
+   private float offSet = 1.5f;
 
     // Start is called before the first frame update
     void Start()
     {
         snake.Enqueue(GameObject.Find("Player"));
         lastObjectAdded = GameObject.Find("Player");
+        index++;
     }
 
   
@@ -41,52 +42,53 @@ public class QueueManager : MonoBehaviour
 
             npc.GetComponent<NpcController>().nextInLine = lastObjectAdded;
 
-            if (snake.Count > 1)
+            if (lastObjectAdded.TryGetComponent<NpcController>(out NpcController contrller))
             {
                 switch (lastObjectAdded.GetComponent<NpcController>().lastSuccessfulDirection)
                 {
                     case NpcController.Direction.Left:
-                        transform.position = lastObjectAdded.transform.position + Vector3.right * offSet;
+                        npc.transform.position = lastObjectAdded.transform.position + lastObjectAdded.transform.right * offSet;
                         break;
 
                     case NpcController.Direction.Right:
-                        transform.position = lastObjectAdded.transform.position + Vector3.left * offSet;
+                        npc.transform.position = lastObjectAdded.transform.position + (lastObjectAdded.transform.right * -1) * offSet;
                         break;
 
                     case NpcController.Direction.Up:
-                        transform.position = lastObjectAdded.transform.position + Vector3.down * offSet;
+                        npc.transform.position = lastObjectAdded.transform.position + (lastObjectAdded.transform.up * -1) * offSet;
                         break;
 
                     case NpcController.Direction.Down:
-                        transform.position = lastObjectAdded.transform.position + Vector3.up * offSet;
+                        npc.transform.position = lastObjectAdded.transform.position + lastObjectAdded.transform.up * offSet;
                         break;
 
-                }
+            }
             }
             else
             {
                 switch (lastObjectAdded.GetComponent<PlayerController>().lastSuccessfulDirection)
                 {
                     case PlayerController.Direction.Left:
-                        transform.position = lastObjectAdded.transform.position + Vector3.right * offSet;
+                        npc. transform.position = lastObjectAdded.transform.position + lastObjectAdded.transform.right * offSet;
                         break;
 
                     case PlayerController.Direction.Right:
-                        transform.position = lastObjectAdded.transform.position + Vector3.left * offSet;
+                        npc.transform.position = lastObjectAdded.transform.position + (lastObjectAdded.transform.right * -1) * offSet;
                         break;
 
                     case PlayerController.Direction.Up:
-                        transform.position = lastObjectAdded.transform.position + Vector3.down * offSet;
+                        npc.transform.position = lastObjectAdded.transform.position + (lastObjectAdded.transform.up * -1) * offSet;
                         break;
 
                     case PlayerController.Direction.Down:
-                        transform.position = lastObjectAdded.transform.position + Vector3.up * offSet;
+                        npc.transform.position = lastObjectAdded.transform.position + lastObjectAdded.transform.up * offSet;
                         break;
 
-                }
+            }
             }
               
 
         lastObjectAdded = npc;
+        index++;
     }
 }
