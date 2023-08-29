@@ -14,10 +14,27 @@ public class PlayerController : MonoBehaviour
     public Direction lastSuccessfulDirection = Direction.None;
     public Direction desiredDirection = Direction.None;
 
+    [Header("Tail")]
+    public GameObject tail;
+    public List<GameObject> tailObjects = new List<GameObject>();
+    public Vector3 offset = Vector3.zero;
+
+    public Direction lastTurnDirection = Direction.None;
+    public Vector3 lastTurnPosition = Vector3.zero;
+
     // Start is called before the first frame update
     void Start()
     {
         this.currentStepTime = this.stepTime;
+        /*
+        for (int i = 0; i < tailList.Count; i++)
+        {
+            tailList[i].transform.position = this.transform.position - new Vector3(0.5f, 0);
+
+        }*/
+
+        if (this.tail != null)
+            this.tail.transform.position = this.transform.position + new Vector3(0.5f, 0);
     }
 
     // Update is called once per frame
@@ -42,10 +59,13 @@ public class PlayerController : MonoBehaviour
             this.currentStepTime -= Time.deltaTime;
         else
         {
-            if ((this.desiredDirection == Direction.Up || this.desiredDirection == Direction.Down) && IsRoundNumber(this.transform.position.x))
-                this.lastSuccessfulDirection = this.desiredDirection;
-            else if ((this.desiredDirection == Direction.Left || this.desiredDirection == Direction.Right) && IsRoundNumber(this.transform.position.y))
-                this.lastSuccessfulDirection = this.desiredDirection;
+            this.tail.GetComponent<TailObject>().MoveTail(this.stepAmount, this.lastSuccessfulDirection);
+
+            if ((this.desiredDirection == Direction.Up || this.desiredDirection == Direction.Down) && (this.lastSuccessfulDirection != Direction.Up && this.lastSuccessfulDirection != Direction.Down) && IsRoundNumber(this.transform.position.x))
+                UpdateDirectionData();
+
+            else if ((this.desiredDirection == Direction.Left || this.desiredDirection == Direction.Right) && (this.lastSuccessfulDirection != Direction.Left && this.lastSuccessfulDirection != Direction.Right) && IsRoundNumber(this.transform.position.y))
+                UpdateDirectionData();
 
             Vector3 newDirection = Vector3.zero;
 
@@ -65,10 +85,26 @@ public class PlayerController : MonoBehaviour
                     break;
             }
 
-            this.transform.position += newDirection * stepAmount;
+            this.transform.position += newDirection * this.stepAmount;
             this.transform.position = ForceRoundPosition(this.transform.position);
             this.currentStepTime = this.stepTime;
         }
+
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            this.tail.GetComponent<TailObject>().AddTail(tailObjects[0]);
+            this.tailObjects.RemoveAt(0);
+        }
+    }
+
+    private void UpdateDirectionData()
+    {
+
+        this.lastSuccessfulDirection = this.desiredDirection;
+        this.desiredDirection = Direction.None;
+        this.lastTurnPosition = this.transform.position;
+        tail.GetComponent<TailObject>().UpdateTail(this.lastSuccessfulDirection, this.lastTurnPosition);
     }
 
     Vector3 ForceRoundPosition(Vector3 input)
