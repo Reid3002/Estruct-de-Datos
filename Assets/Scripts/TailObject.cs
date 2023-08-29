@@ -2,83 +2,53 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TailObject : MonoBehaviour
+public class TailObject : SnakeController
 {
-    [Header("Direction")]
-    public PlayerController.Direction lastSuccessfulDirection = PlayerController.Direction.None;
-
-    [Header("Turn Data")]
-    public PlayerController.Direction desiredDirection = PlayerController.Direction.None;
-    public Vector3 lastTurnPosition = Vector3.zero;
-
-    [Header("Tail Child")]
-    public GameObject tailObject;
-
-    public void MoveTail(float stepAmount, PlayerController.Direction currentDirection = PlayerController.Direction.None)
+    public override void UpdateTail(Direction newDirection, Vector3 newTurnPosition)
     {
-        if (currentDirection != PlayerController.Direction.None && this.lastSuccessfulDirection == PlayerController.Direction.None)
+        this.desiredDirection = newDirection;
+        this.lastTurnPosition = newTurnPosition;
+    }
+
+    public override void MoveTail(float stepAmount, Direction currentDirection = Direction.None)
+    {
+        if (currentDirection != PlayerController.Direction.None && this.lastSuccessfulDirection == Direction.None)
             this.lastSuccessfulDirection = currentDirection;
 
         Vector3 newDirection = Vector3.zero;
 
         switch (this.lastSuccessfulDirection)
         {
-            case PlayerController.Direction.Up:
+            case Direction.Up:
                 newDirection = Vector3.up;
                 break;
-            case PlayerController.Direction.Down:
+            case Direction.Down:
                 newDirection = Vector3.down;
                 break;
-            case PlayerController.Direction.Left:
+            case Direction.Left:
                 newDirection = Vector3.left;
                 break;
-            case PlayerController.Direction.Right:
+            case Direction.Right:
                 newDirection = Vector3.right;
                 break;
         }
 
-        if (this.tailObject != null)
-        {
-            this.tailObject.GetComponent<TailObject>().MoveTail(stepAmount, this.lastSuccessfulDirection);
-        }
+        // Move the other tail before moving the this one
+        if (this.tailObject != null && this.lastSuccessfulDirection != Direction.None)
+            this.tailObject.MoveTail(stepAmount, this.lastSuccessfulDirection);
 
+        // Move this tail
         this.transform.position += newDirection * stepAmount;
         this.transform.position = ForceRoundPosition(this.transform.position, stepAmount);
 
+        // If the position of turning is reached, then turn
         if (this.transform.position == this.lastTurnPosition)
         {
             this.lastSuccessfulDirection = this.desiredDirection;
+
+            // Then change the other tail turning data
             if (this.tailObject != null)
-                this.tailObject.GetComponent<TailObject>().UpdateTail(this.desiredDirection, this.lastTurnPosition);
+                this.tailObject.UpdateTail(this.desiredDirection, this.lastTurnPosition);
         }
-    }
-
-    public void UpdateTail(PlayerController.Direction newDirection, Vector3 newTurnPosition)
-    {
-        this.desiredDirection = newDirection;
-        this.lastTurnPosition = newTurnPosition;
-    }
-
-    public void AddTail(GameObject tailInput)
-    {
-        if (this.tailObject == null)
-        {
-            this.tailObject = tailInput;
-            this.tailObject.transform.position = this.transform.position + new Vector3(0.5f, 0);
-        }
-        else
-        {
-            this.tailObject.GetComponent<TailObject>().AddTail(tailInput);
-            //this.tailObject.transform.position += this.transform.position + new Vector3(0.5f, 0);
-        }
-            
-    }
-
-    Vector3 ForceRoundPosition(Vector3 input, float stepAmount)
-    {
-        float snapX = Mathf.Round(input.x / stepAmount) * stepAmount;
-        float snapY = Mathf.Round(input.y / stepAmount) * stepAmount;
-
-        return new Vector3(snapX, snapY);
     }
 }
