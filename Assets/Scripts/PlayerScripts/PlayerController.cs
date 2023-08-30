@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.VersionControl.Asset;
 
 public class PlayerController : SnakeController
 {
     [Header("Objects")]
+    public List<SnakeController> tailsList = new List<SnakeController>();
     public SnakeController testTail;
+    public SnakeController testTail2;
 
     [Header("Settings")]
     [Range(0.05f, 5)] public float newTileSize = 0.5f;
     [Range(0.005f, 0.5f)] public float stepAmount = 0.05f;
     [Range(0.0001f, 1)] public float stepTime = 0.5f;
     [Range(1, 10)] public int steps = 1;
-
 
     private float currentStepTime = 0;
 
@@ -89,9 +91,22 @@ public class PlayerController : SnakeController
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SnakeController tailTest = testTail;
+            tailsList.Add(tailTest);
             tailTest.tileSize = this.newTileSize;
             AddTail(Instantiate(tailTest));
         }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            SnakeController tailTest = testTail2;
+            tailsList.Add(tailTest);
+            tailTest.tileSize = this.newTileSize;
+            AddTail(Instantiate(tailTest));
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.X))
+            RemoveTail();
     }
 
     public override void UpdateTail(Direction newDirection, Vector3 newTurnPosition)
@@ -103,5 +118,14 @@ public class PlayerController : SnakeController
     public override void MoveTail(float stepAmount, Direction currentDirection = Direction.None)
     {
         print("HEAD: MoveTail n/a.");
+    }
+
+    private void RemoveTail(bool removeLast = true)
+    {
+        print("Head remove tail");
+        if (this.tailsList.Count > 0) 
+        {
+            this.tailsList.RemoveAt(this.tailsList.Count - 1);
+        }
     }
 }

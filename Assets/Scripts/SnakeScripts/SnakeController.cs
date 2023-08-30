@@ -11,7 +11,7 @@ public abstract class SnakeController : MonoBehaviour
     public Direction lastSuccessfulDirection = Direction.None;
     public Direction desiredDirection = Direction.None;
 
-    [Header("Saved turning")]
+    [Header("Saved turn")]
     public Direction lastTurnDirection = Direction.None;
     public Vector3 lastTurnPosition = Vector3.zero;
 
@@ -45,7 +45,7 @@ public abstract class SnakeController : MonoBehaviour
     public abstract void UpdateTail(Direction newDirection, Vector3 newTurnPosition);
     public abstract void MoveTail(float stepAmount, Direction currentDirection = Direction.None);
 
-    // Helpers
+    // yikes 1
     public Vector3 ForceRoundPosition(Vector3 positionInput, float stepAmountInput)
     {
         float snapX = Mathf.Round(positionInput.x / stepAmountInput) * stepAmountInput;
@@ -54,7 +54,7 @@ public abstract class SnakeController : MonoBehaviour
         return new Vector3(snapX, snapY);
     }
 
-    // yikes
+    // yikes 2
     public bool IsRoundNumber(float number, float tolerance = 0.003f)
     {
         int roundedInt = Mathf.RoundToInt(number);

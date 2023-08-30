@@ -47071,9 +47071,11 @@ MonoBehaviour:
   lastTurnPosition: {x: 0, y: 0, z: 0}
   tailObject: {fileID: 0}
   testTail: {fileID: 1346912404550062952, guid: 268335b172124314b8bba3568985fc24, type: 3}
+  testTail2: {fileID: 6449039977072160600, guid: f88149b15041db745855b424ef1b658c, type: 3}
+  newTileSize: 0.5
   stepAmount: 0.05
   stepTime: 0.1
-  newTileSize: 0.5
+  steps: 1
 --- !u!1 &1277382556
 GameObject:
   m_ObjectHideFlags: 0
