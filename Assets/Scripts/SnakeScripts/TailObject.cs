@@ -12,7 +12,7 @@ public class TailObject : SnakeController
 
     public override void MoveTail(float stepAmount, Direction currentDirection = Direction.None)
     {
-        if (currentDirection != PlayerController.Direction.None && this.lastSuccessfulDirection == Direction.None)
+        if (currentDirection != Direction.None && this.lastSuccessfulDirection == Direction.None)
             this.lastSuccessfulDirection = currentDirection;
 
         Vector3 newDirection = Vector3.zero;
