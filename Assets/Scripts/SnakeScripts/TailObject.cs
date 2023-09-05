@@ -33,7 +33,7 @@ public class TailObject : SnakeController
                 break;
         }
 
-        // Move the other tail before moving the this one
+        // Move the other tail before moving this one
         if (this.tailObject != null && this.lastSuccessfulDirection != Direction.None)
             this.tailObject.MoveTail(stepAmount, this.lastSuccessfulDirection);
 
