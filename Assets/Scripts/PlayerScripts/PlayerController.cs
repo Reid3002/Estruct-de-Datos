@@ -28,6 +28,14 @@ public class PlayerController : SnakeController
     // Update is called once per frame
     void Update()
     {
+        /* TEST */
+        if (Input.GetKeyDown(KeyCode.X))
+            stepTime += 0.01f;
+
+        if (Input.GetKeyDown(KeyCode.Z))
+            stepTime -= 0.01f;
+        /* TEST */
+
         float hAxis = Input.GetAxisRaw("Horizontal");
         float vAxis = Input.GetAxisRaw("Vertical");
 
