@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public Points _points;
     public float points;
 
+    public int victoryScene = 0;
+    public int loseScene = 0;
+
     private void Awake()
     {
         if (Instance == null)
@@ -31,12 +34,12 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(loseScene);
         }
 
         if (_points.points >= 100)
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(victoryScene);
         }
 
 

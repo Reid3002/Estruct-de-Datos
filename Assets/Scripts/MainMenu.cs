@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] GameObject firstMenu;
+
+    public int mainMenuScene;
     public int playableScene;
    
 
@@ -24,11 +26,11 @@ public class MainMenu : MonoBehaviour
     }
     public void Nivel1()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(playableScene);
     }
     public void Nivel2()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(playableScene);
     }
     public void Exit()
     {
