@@ -213,6 +213,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3455917431045040680, guid: b03a007e62153044484bbf1d56d158b3, type: 3}
   m_PrefabInstance: {fileID: 3455917431189796389}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &261559236 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6285431216612169774, guid: 52822d42545a9904387b9bf82151b13b, type: 3}
+  m_PrefabInstance: {fileID: 6285431215393848571}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b034c48d9ae324ab28f60dd3437968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &459639166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -314,7 +325,7 @@ GameObject:
   - component: {fileID: 460908395}
   - component: {fileID: 460908394}
   m_Layer: 5
-  m_Name: PointsText
+  m_Name: TextPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -455,7 +466,6 @@ GameObject:
   - component: {fileID: 490573784}
   - component: {fileID: 490573786}
   - component: {fileID: 490573785}
-  - component: {fileID: 490573787}
   m_Layer: 5
   m_Name: Points
   m_TagString: Untagged
@@ -580,20 +590,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 490573783}
   m_CullTransparentMesh: 1
---- !u!114 &490573787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 490573783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f3107737414dc34883a976956e2fe97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points: 0
-  textMesh: {fileID: 0}
 --- !u!1 &573589480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,10 +1629,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 245cc8fd188c2764abe75d1626ec979d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _points: {fileID: 490573787}
   points: 0
+  pointsForWinScene: 500
   victoryScene: 4
   loseScene: 3
+  edibleScript: {fileID: 1879869325}
+  textMesh: {fileID: 490573785}
+  thePlayer: {fileID: 261559236}
 --- !u!114 &1879869325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1664,7 +1663,7 @@ MonoBehaviour:
   - {fileID: 761023489}
   - {fileID: 470900584}
   - {fileID: 161537037}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 1879869324}
   maxNextQueueItems: 5
   edibleTypesAmount: 0
 --- !u!1 &2117069678 stripped
@@ -1852,11 +1851,11 @@ PrefabInstance:
     - target: {fileID: 6630985191770057579, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
       propertyPath: points
       value: 
-      objectReference: {fileID: 490573787}
+      objectReference: {fileID: 0}
     - target: {fileID: 6630985191770057579, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
       propertyPath: puntaje
       value: 
-      objectReference: {fileID: 490573787}
+      objectReference: {fileID: 0}
     - target: {fileID: 6630985191770057579, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
       propertyPath: m_Enabled
       value: 1

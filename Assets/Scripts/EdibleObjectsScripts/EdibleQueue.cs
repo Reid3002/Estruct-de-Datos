@@ -15,19 +15,9 @@ public class EdibleQueue : MonoBehaviour
     public List<GameObject> positionsReferences = new List<GameObject>();
 
     [Header("Settings & References")]
-    private GameManager gameManager;
+    public GameManager gameManager;
     public int maxNextQueueItems = 5;
     public int edibleTypesAmount;
-
-    private void Awake()
-    {
-        this.edibleTypesAmount = System.Enum.GetNames(typeof(EdibleType)).Length;
-    }
-
-    private void Start()
-    {
-        this.gameManager = GetComponent<GameManager>();
-    }
 
     public void InitializeQueue()
     {
@@ -54,7 +44,6 @@ public class EdibleQueue : MonoBehaviour
         // Add new edible
         this.nextEdible = Random.Range(0, this.edibleTypesAmount);
         AddRandomEdible();
-        RefreshItemPositionsFromQueue();
     }
 
     void AddRandomEdible()
@@ -94,6 +83,7 @@ public class EdibleQueue : MonoBehaviour
             this.currentEdiblesInQueue.Add(edible);
             this.queueEdiblesIDs.Enqueue(this.nextEdible);
 
+            RefreshItemPositionsFromQueue();
             print("Adding edible '" + name + "'.");
         }
         else
@@ -108,17 +98,5 @@ public class EdibleQueue : MonoBehaviour
             currentEdiblesInQueue[i].transform.localScale = new Vector2(1, 1);
             currentEdiblesInQueue[i].transform.position = positionsReferences[i].transform.position;
         }
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.B))
-            NextEdible();
-
-        if (Input.GetKeyDown(KeyCode.V))
-            InitializeQueue();
-
-        if (Input.GetKeyDown(KeyCode.N))
-            NextEdible();
     }
 }

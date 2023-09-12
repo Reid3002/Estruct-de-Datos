@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.VersionControl.Asset;
 
 public class PlayerController : SnakeController
 {
@@ -26,7 +25,7 @@ public class PlayerController : SnakeController
     }
 
     // Update is called once per frame
-    void Update()
+    public void PlayerUpdate(float delta)
     {
         /* TEST */
         if (Input.GetKeyDown(KeyCode.X))
@@ -52,7 +51,7 @@ public class PlayerController : SnakeController
         }
 
         if (this.currentStepTime > 0)
-            this.currentStepTime -= Time.deltaTime;
+            this.currentStepTime -= delta;
         else
         {
             // Make X steps
