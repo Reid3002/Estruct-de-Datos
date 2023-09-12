@@ -19,7 +19,7 @@ public abstract class EdibleController : MonoBehaviour
     public abstract void OnTriggerEnter2D(Collider2D collision);
     public abstract void OnEated(Collider2D instigator = null);
 
-    public void Dequeue()
+    public void EdibleDequeue()
     {
         this.transform.position = new Vector3(UnityEngine.Random.Range(this.minLocation.x, this.maxLocation.x), UnityEngine.Random.Range(this.minLocation.y, this.maxLocation.y), 0);
     }

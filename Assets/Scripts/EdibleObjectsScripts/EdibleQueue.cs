@@ -38,7 +38,8 @@ public class EdibleQueue : MonoBehaviour
         // Remove edible
         this.queueIndex = this.queueEdiblesIDs.Dequeue();
 
-        this.currentEdiblesInQueue[0].Dequeue();
+        // Move edible to action area and remove from list
+        this.currentEdiblesInQueue[0].EdibleDequeue();
         this.currentEdiblesInQueue.RemoveAt(0);
 
         // Add new edible
