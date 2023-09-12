@@ -55,6 +55,14 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 009a8839c5fc1b74cb17706da9e72d24, type: 2}
+    - target: {fileID: 6630985191770057579, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
+      propertyPath: type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630985191770057579, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
+      propertyPath: pointQuantity
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6630985191770057582, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
       propertyPath: m_Name
       value: EdibleSlowPlayer

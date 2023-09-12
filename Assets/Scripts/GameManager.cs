@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,8 +7,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-
     public static GameManager Instance;
+    public EdibleQueue edibleScript;
     public Points _points;
     public float points;
 
@@ -21,12 +22,14 @@ public class GameManager : MonoBehaviour
         else
             Destroy(this);
 
+        this.edibleScript = GetComponent<EdibleQueue>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.edibleScript.InitializeQueue();
+        this.edibleScript.NextEdible();
     }
 
     // Update is called once per frame
@@ -45,5 +48,16 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void AddPoints(float quantity)
+    {
+        _points.AddPoints(quantity);
+    }
+
+    public void OnEdibleEated(EdibleController reference)
+    {
+        reference.OnEatedEvent -= OnEdibleEated;
+        AddPoints(reference.pointQuantity);
+        this.edibleScript.NextEdible();
+    }
 
 }
