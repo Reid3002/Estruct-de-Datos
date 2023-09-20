@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using static EdibleController;
 
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
     public EdibleQueue edibleScript;
     public TextMeshProUGUI textMesh;
     public PlayerController thePlayer;
+    public EdibleGlobalEffects edibleEffectsScript;
 
 
     private void Awake()
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         this.edibleScript.edibleTypesAmount = this.edibleScript.edibleTypesAmount = System.Enum.GetNames(typeof(EdibleType)).Length;
+        this.edibleEffectsScript = GetComponent<EdibleGlobalEffects>();
         this.edibleScript.InitializeQueue();
         this.edibleScript.NextEdible();
     }
@@ -40,6 +43,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         float t = Time.deltaTime;
+        
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene(loseScene);
@@ -53,7 +58,10 @@ public class GameManager : MonoBehaviour
         this.points += t;
         this.textMesh.text = points.ToString("0");
 
+        // Update scripts
+        //this.edibleEffectsScript.GlobalEffectsUpdate(t);
         this.thePlayer.PlayerUpdate(t);
+
     }
 
     public void AddPoints(float quantity)
@@ -66,6 +74,28 @@ public class GameManager : MonoBehaviour
         reference.OnEatedEvent -= OnEdibleEated;
         AddPoints(reference.pointQuantity);
         this.edibleScript.NextEdible();
+
+        switch (reference.type)
+        {
+            case EdibleType.AddTail:
+                break;
+            case EdibleType.RemoveTail:
+                break;
+            case EdibleType.SlowPlayer:
+                break;
+            case EdibleType.PlayerReverse:
+                break;
+            case EdibleType.StunEnemies:
+                break;
+            case EdibleType.LightsOff:
+                this.edibleEffectsScript.ExecEffect(EdibleGlobalEffects.EffectType.LightsOff);
+                break;
+            case EdibleType.LightsOn:
+                this.edibleEffectsScript.ExecEffect(EdibleGlobalEffects.EffectType.LightsOn);
+                break;
+            default:
+                break;
+        }
     }
 
 }

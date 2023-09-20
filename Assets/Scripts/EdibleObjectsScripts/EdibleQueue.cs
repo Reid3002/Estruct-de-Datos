@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using static EdibleController;
 
@@ -14,10 +15,15 @@ public class EdibleQueue : MonoBehaviour
     public List<EdibleController> currentEdiblesInQueue;
     public List<GameObject> positionsReferences = new List<GameObject>();
 
+    [Header("Game table")]
+    public Vector2 minLocation = Vector2.zero;
+    public Vector2 maxLocation = Vector2.zero;
+
     [Header("Settings & References")]
     public GameManager gameManager;
     public int maxNextQueueItems = 5;
     public int edibleTypesAmount;
+
 
     public void InitializeQueue()
     {
@@ -39,7 +45,7 @@ public class EdibleQueue : MonoBehaviour
         this.queueIndex = this.queueEdiblesIDs.Dequeue();
 
         // Move edible to action area and remove from list
-        this.currentEdiblesInQueue[0].EdibleDequeue();
+        this.currentEdiblesInQueue.First().EdibleDequeue();
         this.currentEdiblesInQueue.RemoveAt(0);
 
         // Add new edible
@@ -65,15 +71,23 @@ public class EdibleQueue : MonoBehaviour
                 break;
             case EdibleType.SlowPlayer:
                 name = "SlowPlayer";
-                edible = Instantiate(allEdibles[4], new Vector2(100, 100), new Quaternion());
+                edible = Instantiate(allEdibles[2], new Vector2(100, 100), new Quaternion());
                 break;
             case EdibleType.PlayerReverse:
                 name = "PlayerReverse";
-                edible = Instantiate(allEdibles[2], new Vector2(100, 100), new Quaternion());
+                edible = Instantiate(allEdibles[3], new Vector2(100, 100), new Quaternion());
                 break;
             case EdibleType.StunEnemies:
                 name = "StunEnemies";
-                edible = Instantiate(allEdibles[3], new Vector2(100, 100), new Quaternion());
+                edible = Instantiate(allEdibles[4], new Vector2(100, 100), new Quaternion());
+                break;
+            case EdibleType.LightsOff:
+                name = "LightsOff";
+                edible = Instantiate(allEdibles[5], new Vector2(100, 100), new Quaternion());
+                break;
+            case EdibleType.LightsOn:
+                name = "LightsOn";
+                edible = Instantiate(allEdibles[6], new Vector2(100, 100), new Quaternion());
                 break;
         }
 
@@ -84,6 +98,10 @@ public class EdibleQueue : MonoBehaviour
             this.currentEdiblesInQueue.Add(edible);
             this.queueEdiblesIDs.Enqueue(this.nextEdible);
 
+            // Update game table size
+            edible.UpdateGameTable(minLocation, maxLocation);
+
+            // Then
             RefreshItemPositionsFromQueue();
             print("Adding edible '" + name + "'.");
         }
