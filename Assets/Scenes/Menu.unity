@@ -364,7 +364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstMenu: {fileID: 1442670711}
   mainMenuScene: 0
-  playableScene: 2
+  playableScene: 1
 --- !u!4 &1363209448
 Transform:
   m_ObjectHideFlags: 0
