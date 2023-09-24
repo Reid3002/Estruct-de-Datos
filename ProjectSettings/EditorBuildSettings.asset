@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Test01.unity
     guid: a45768245c1f4cc4aa9534217c061ae8
   - enabled: 1
-    path: Assets/Scenes/TestingScenes/Test02.unity
+    path: Assets/Scenes/TestingScenes/Test01.unity
     guid: e5fba1545c5c8ea4a8477fd889918b55
   - enabled: 1
     path: Assets/Scenes/Defeat.unity
