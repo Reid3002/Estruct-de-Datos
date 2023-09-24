@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.VersionControl.Asset;
 
 public class PlayerController : SnakeController
 {
@@ -26,8 +25,16 @@ public class PlayerController : SnakeController
     }
 
     // Update is called once per frame
-    void Update()
+    public void PlayerUpdate(float delta)
     {
+        /* TEST */
+        if (Input.GetKeyDown(KeyCode.X))
+            stepTime += 0.01f;
+
+        if (Input.GetKeyDown(KeyCode.Z))
+            stepTime -= 0.01f;
+        /* TEST */
+
         float hAxis = Input.GetAxisRaw("Horizontal");
         float vAxis = Input.GetAxisRaw("Vertical");
 
@@ -44,7 +51,7 @@ public class PlayerController : SnakeController
         }
 
         if (this.currentStepTime > 0)
-            this.currentStepTime -= Time.deltaTime;
+            this.currentStepTime -= delta;
         else
         {
             // Make X steps
