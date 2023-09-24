@@ -10,11 +10,16 @@ public class PoolStack : MonoBehaviour, IStack<GameObject>
     [SerializeField] float spawnTimeInSeconds = 10;
     private float timerCount = 0;
     [SerializeField] GameObject spawner;
-    [SerializeField] GameObject gameManager;
+    [SerializeField] EnemyQueue enemyQueueScript;
     // Start is called before the first frame update
     private void Awake()
     {
         StartStack(Size);
+    }
+
+    private void Start()
+    {
+        this.enemyQueueScript = GetComponent<EnemyQueue>();
     }
 
     // Update is called once per frame
@@ -26,7 +31,7 @@ public class PoolStack : MonoBehaviour, IStack<GameObject>
 
             if (timerExpired) 
             {
-                gameManager.GetComponent<EnemyQueue>().Enqueue(Unstack());// Lo saca del la pila del pool y lo mete en la cola de enemigos.
+                this.enemyQueueScript.Enqueue(Unstack());// Lo saca del la pila del pool y lo mete en la cola de enemigos.
                 timerCount = 0;
             }            
         }

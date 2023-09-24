@@ -1,15 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1115969051610953556
+--- !u!1001 &8276639536972124328
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2953214078924593554, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5429184344473499401, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
       propertyPath: type
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890651076217912351, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0383
       objectReference: {fileID: 0}
     - target: {fileID: 6630985191770057576, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
       propertyPath: m_RootOrder
@@ -58,10 +66,10 @@ PrefabInstance:
     - target: {fileID: 6630985191770057578, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 009a8839c5fc1b74cb17706da9e72d24, type: 2}
+      objectReference: {fileID: 9100000, guid: 6f43d9af6145e184fb067651a9deae3d, type: 2}
     - target: {fileID: 6630985191770057579, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
       propertyPath: type
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6630985191770057579, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
       propertyPath: pointQuantity
@@ -69,33 +77,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630985191770057582, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
       propertyPath: m_Name
-      value: EdibleSlowPlayer
+      value: EdibleRemoveTail
       objectReference: {fileID: 0}
     - target: {fileID: 8869640716682943748, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
       propertyPath: m_text
-      value: 'S
+      value: '-
 
 '
       objectReference: {fileID: 0}
     - target: {fileID: 8869640716682943748, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
-      propertyPath: m_fontStyle
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8869640716682943748, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
       propertyPath: m_fontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8869640716682943748, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
-      propertyPath: m_fontColor.g
-      value: 0.4666667
-      objectReference: {fileID: 0}
-    - target: {fileID: 8869640716682943748, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
-      propertyPath: m_fontColor.r
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8869640716682943748, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294932224
+      propertyPath: m_fontColor.g
+      value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8869640716682943748, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.01234436
+      objectReference: {fileID: 0}
+    - target: {fileID: 8869640716682943748, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278255363
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2953214078924593554, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
+--- !u!1 &3375863711892323270 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6630985191770057582, guid: 115909677cc1f1940a39e50f65f05d70, type: 3}
+  m_PrefabInstance: {fileID: 8276639536972124328}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &496820860522633992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3375863711892323270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 674605dc70df44f47ba36adf9ec73d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  isFriendly: 1
+  pointQuantity: 5

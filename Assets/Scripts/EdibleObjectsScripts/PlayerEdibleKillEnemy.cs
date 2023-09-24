@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KillEnemyPower : MonoBehaviour
+public class PlayerEdibleKillEnemy : MonoBehaviour
 {
     [SerializeField] GameObject gameManager;
     // Start is called before the first frame update

@@ -297,7 +297,6 @@ GameObject:
   - component: {fileID: 7134353167560637561}
   - component: {fileID: 6630985191770057577}
   - component: {fileID: 6630985191770057578}
-  - component: {fileID: 5429184344473499401}
   m_Layer: 0
   m_Name: EdibleTest
   m_TagString: Edible
@@ -420,20 +419,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &5429184344473499401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6630985191770057582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 674605dc70df44f47ba36adf9ec73d3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minLocation: {x: 0, y: 0}
-  maxLocation: {x: 0, y: 0}
-  type: 0
-  isFriendly: 1
-  pointQuantity: 0

@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine; 
 
-public class PlayerEdibleTail : EdibleController
+public class PlayerEdibleAddTail : EdibleController
 {
-    [SerializeField] GameObject gameManager;
-     public float pointQuantity;
-     public int points;
+    //public float pointQuantity;
+    //public Points points;
 
     public SnakeController testTail;
 
@@ -14,7 +13,35 @@ public class PlayerEdibleTail : EdibleController
     {
         if (collision.CompareTag("Player"))
         {
-            points += 5;
+            OnEatedEvent?.Invoke(this);
+            OnEated(collision);
+        }
+    }
+
+    public override void OnEated(Collider2D instigator)
+    {
+        SnakeController tailTest = Instantiate(testTail);
+        instigator.gameObject.GetComponent<SnakeController>().AddTail(tailTest);
+        Destroy(this.gameObject);
+    }
+}
+
+/*
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerEdibleTail : EdibleController
+{
+    [SerializeField] GameObject gameManager;
+
+    public SnakeController testTail;
+
+    public override void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            pointQuantity += 5;
             OnEated(collision);
         }
     }
@@ -31,9 +58,10 @@ public class PlayerEdibleTail : EdibleController
     // Start is called before the first frame update
     void Start()
     {
-        this.transform.position = new Vector3(Random.Range(this.minLocation.x, this.maxLocation.x), Random.Range(this.minLocation.y, this.maxLocation.y), 0);
+        //this.transform.position = new Vector3(Random.Range(this.minLocation.x, this.maxLocation.x), Random.Range(this.minLocation.y, this.maxLocation.y), 0);
         //tailsList.Add(tailTest);
         //tailTest.tileSize = this.newTileSize;
         //AddTail();
     }
 }
+*/
