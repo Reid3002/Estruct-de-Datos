@@ -5,6 +5,8 @@ using static UnityEditor.VersionControl.Asset;
 
 public class PlayerController : SnakeController
 {
+    public bool alive = true;
+
     [Header("Objects")]
     public List<SnakeController> tailsList = new List<SnakeController>();
     public SnakeController testTail;

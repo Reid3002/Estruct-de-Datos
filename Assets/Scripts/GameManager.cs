@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-
+    [SerializeField] GameObject player;
     public static GameManager Instance;
-    public Points _points;
+    public float _points;
     public float points;
 
     public int victoryScene = 0;
@@ -23,21 +23,21 @@ public class GameManager : MonoBehaviour
 
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
+        if (!player.GetComponent<PlayerController>().alive)
+        {            
+            Debug.Log("You lose");
+            SceneManager.LoadScene(loseScene);
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene(loseScene);
         }
 
-        if (_points.points >= 100)
+        if (_points >= 100)
         {
             SceneManager.LoadScene(victoryScene);
         }
