@@ -477,7 +477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4479051094239725801, guid: d05895b89ff63dc4ab0f33eb4bb147bd, type: 3}
       propertyPath: pointsForWinScene
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4479051094239725804, guid: d05895b89ff63dc4ab0f33eb4bb147bd, type: 3}
       propertyPath: m_Name
@@ -790,8 +790,12 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6285431216612169774, guid: 52822d42545a9904387b9bf82151b13b, type: 3}
+      propertyPath: steps
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285431216612169774, guid: 52822d42545a9904387b9bf82151b13b, type: 3}
       propertyPath: stepTime
-      value: 0.0001
+      value: 0.015
       objectReference: {fileID: 0}
     - target: {fileID: 6285431216612169775, guid: 52822d42545a9904387b9bf82151b13b, type: 3}
       propertyPath: m_RootOrder

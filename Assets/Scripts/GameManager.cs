@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
         float t = Time.deltaTime;
 
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || !thePlayer.alive)
         {
             SceneManager.LoadScene(loseScene);
         }
