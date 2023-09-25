@@ -308,6 +308,7 @@ Transform:
   - {fileID: 2610471077218294598}
   - {fileID: 6616781869540787657}
   - {fileID: 7134011762676432145}
+  - {fileID: 8703535721529238993}
   m_Father: {fileID: 4479051094239725807}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1040,13 +1041,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 0
+  minLocation: {x: -8.5, y: -5}
+  maxLocation: {x: 9, y: 4}
   pointsForWinScene: 500
   victoryScene: 4
   loseScene: 3
-  edibleScript: {fileID: 4479051094239725800}
-  textMesh: {fileID: 490573785}
   thePlayer: {fileID: 0}
-  edibleEffectsScript: {fileID: 4479051094239725803}
+  textMesh: {fileID: 490573785}
 --- !u!114 &4479051094239725800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1069,6 +1070,7 @@ MonoBehaviour:
   - {fileID: 1897831870525431047, guid: a5a488a1eb28d3a4d9908f6849558776, type: 3}
   - {fileID: 515286945164545921, guid: d89982e87b104224c8266aced0835af0, type: 3}
   - {fileID: 2089343370731546341, guid: 4a67d98127fa31746b401363748e0460, type: 3}
+  - {fileID: 27523553547638481}
   currentEdiblesInQueue: []
   positionsReferences:
   - {fileID: 4479051094005032387}
@@ -1076,8 +1078,6 @@ MonoBehaviour:
   - {fileID: 4479051094989407076}
   - {fileID: 4479051094708064269}
   - {fileID: 4479051094379959144}
-  minLocation: {x: -8.5, y: -5}
-  maxLocation: {x: 9, y: 4}
   gameManager: {fileID: 4479051094239725801}
   maxNextQueueItems: 5
   edibleTypesAmount: 0
@@ -1132,7 +1132,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Size: 50
   spawnTimeInSeconds: 10
-  spawner: {fileID: 0}
   enemyQueueScript: {fileID: 1522685252}
 --- !u!1001 &2250917
 PrefabInstance:
@@ -1359,6 +1358,95 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7171875234667286835, guid: 1894a2c32a49ae741a3ea585d745ea1d, type: 3}
   m_PrefabInstance: {fileID: 725830395}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1155193891
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 573589482}
+    m_Modifications:
+    - target: {fileID: 8703535722666572274, guid: cc224499b1335a9418cbfa6075781dbe, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703535722666572274, guid: cc224499b1335a9418cbfa6075781dbe, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6109109
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703535722666572274, guid: cc224499b1335a9418cbfa6075781dbe, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3827751
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703535722666572274, guid: cc224499b1335a9418cbfa6075781dbe, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703535722666572274, guid: cc224499b1335a9418cbfa6075781dbe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.029
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703535722666572274, guid: cc224499b1335a9418cbfa6075781dbe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.749
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703535722666572274, guid: cc224499b1335a9418cbfa6075781dbe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703535722666572274, guid: cc224499b1335a9418cbfa6075781dbe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703535722666572274, guid: cc224499b1335a9418cbfa6075781dbe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703535722666572274, guid: cc224499b1335a9418cbfa6075781dbe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703535722666572274, guid: cc224499b1335a9418cbfa6075781dbe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703535722666572274, guid: cc224499b1335a9418cbfa6075781dbe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703535722666572274, guid: cc224499b1335a9418cbfa6075781dbe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703535722666572274, guid: cc224499b1335a9418cbfa6075781dbe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703535722666572274, guid: cc224499b1335a9418cbfa6075781dbe, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703535722666572276, guid: cc224499b1335a9418cbfa6075781dbe, type: 3}
+      propertyPath: m_Name
+      value: EdibleKillEnemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cc224499b1335a9418cbfa6075781dbe, type: 3}
+--- !u!114 &27523553547638481 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 27523554701675250, guid: cc224499b1335a9418cbfa6075781dbe, type: 3}
+  m_PrefabInstance: {fileID: 1155193891}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58905e00393581a44ba1b44689b07976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &8703535721529238993 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8703535722666572274, guid: cc224499b1335a9418cbfa6075781dbe, type: 3}
+  m_PrefabInstance: {fileID: 1155193891}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1287327182
 PrefabInstance:

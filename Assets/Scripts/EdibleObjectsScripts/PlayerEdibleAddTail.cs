@@ -4,19 +4,7 @@ using UnityEngine;
 
 public class PlayerEdibleAddTail : EdibleController
 {
-    //public float pointQuantity;
-    //public Points points;
-
     public SnakeController testTail;
-
-    public override void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            OnEatedEvent?.Invoke(this);
-            OnEated(collision);
-        }
-    }
 
     public override void OnEated(Collider2D instigator)
     {

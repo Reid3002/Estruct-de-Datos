@@ -15,10 +15,6 @@ public class EdibleQueue : MonoBehaviour
     public List<EdibleController> currentEdiblesInQueue;
     public List<GameObject> positionsReferences = new List<GameObject>();
 
-    [Header("Game table")]
-    public Vector2 minLocation = Vector2.zero;
-    public Vector2 maxLocation = Vector2.zero;
-
     [Header("Settings & References")]
     public GameManager gameManager;
     public int maxNextQueueItems = 5;
@@ -89,6 +85,10 @@ public class EdibleQueue : MonoBehaviour
                 name = "LightsOn";
                 edible = Instantiate(allEdibles[6], new Vector2(100, 100), new Quaternion());
                 break;
+            case EdibleType.KillEnemy:
+                name = "KillEnemy";
+                edible = Instantiate(allEdibles[7], new Vector2(100, 100), new Quaternion());
+                break;
         }
 
         // If object is valid, then listen for event and add to queue
@@ -99,7 +99,7 @@ public class EdibleQueue : MonoBehaviour
             this.queueEdiblesIDs.Enqueue(this.nextEdible);
 
             // Update game table size
-            edible.UpdateGameTable(minLocation, maxLocation);
+            edible.UpdateGameTable(this.gameManager.minLocation, this.gameManager.maxLocation);
 
             // Then
             RefreshItemPositionsFromQueue();

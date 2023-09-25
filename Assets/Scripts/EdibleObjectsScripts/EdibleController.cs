@@ -3,7 +3,7 @@ using UnityEngine;
 
 public abstract class EdibleController : MonoBehaviour
 {
-    public enum EdibleType { AddTail, RemoveTail, SlowPlayer, PlayerReverse, StunEnemies, LightsOff, LightsOn }
+    public enum EdibleType { AddTail, RemoveTail, SlowPlayer, PlayerReverse, StunEnemies, LightsOff, LightsOn, KillEnemy }
     public Action<EdibleController> OnEatedEvent;
 
     [Header("Game table")]
@@ -15,9 +15,19 @@ public abstract class EdibleController : MonoBehaviour
     public bool isFriendly = true;
     public float pointQuantity;
 
-    // Events
-    public abstract void OnTriggerEnter2D(Collider2D collision);
-    public abstract void OnEated(Collider2D instigator = null);
+    public virtual void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            OnEatedEvent?.Invoke(this);
+            OnEated(collision);
+        }
+    }
+
+    public virtual void OnEated(Collider2D instigator)
+    {
+        Destroy(this.gameObject);
+    }
 
     public void EdibleDequeue()
     {

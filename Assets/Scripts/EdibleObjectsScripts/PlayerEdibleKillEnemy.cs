@@ -2,22 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerEdibleKillEnemy : MonoBehaviour
+public class PlayerEdibleKillEnemy : EdibleController
 {
-    [SerializeField] GameObject gameManager;
-    // Start is called before the first frame update
-    void Start()
+
+    public override void OnEated(Collider2D instigator)
     {
-        
+        Destroy(this.gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*
+    public virtual OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -25,5 +19,5 @@ public class PlayerEdibleKillEnemy : MonoBehaviour
             gameManager.GetComponent<PoolStack>().Stack(gameManager.GetComponent<EnemyQueue>().Dequeue());
             Destroy(this.gameObject);
         }
-    }
+    }*/
 }

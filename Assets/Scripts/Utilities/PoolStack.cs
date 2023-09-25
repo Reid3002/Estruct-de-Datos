@@ -9,8 +9,9 @@ public class PoolStack : MonoBehaviour, IStack<GameObject>
     private int index;
     [SerializeField] float spawnTimeInSeconds = 10;
     private float timerCount = 0;
-    [SerializeField] GameObject spawner;
     [SerializeField] EnemyQueue enemyQueueScript;
+
+    private GameManager gameManager;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class PoolStack : MonoBehaviour, IStack<GameObject>
 
     private void Start()
     {
+        this.gameManager = GetComponent<GameManager>();
         this.enemyQueueScript = GetComponent<EnemyQueue>();
     }
 
@@ -75,7 +77,10 @@ public class PoolStack : MonoBehaviour, IStack<GameObject>
 
             index--;
 
-            temp.transform.position = spawner.transform.position;
+            temp.transform.position = new Vector3(
+                Random.Range(this.gameManager.minLocation.x, this.gameManager.maxLocation.x), 
+                Random.Range(this.gameManager.minLocation.y, this.gameManager.maxLocation.y), 
+                0);
 
             return temp;
         }
