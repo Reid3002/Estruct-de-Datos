@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6285431216612169774}
   - component: {fileID: 6285431216612169773}
   - component: {fileID: 6285431216612169772}
+  - component: {fileID: 6013002726109019465}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -105,6 +106,7 @@ MonoBehaviour:
   lastTurnDirection: 0
   lastTurnPosition: {x: 0, y: 0, z: 0}
   tailObject: {fileID: 0}
+  alive: 1
   tailsList: []
   testTail: {fileID: 1346912404550062952, guid: 268335b172124314b8bba3568985fc24, type: 3}
   testTail2: {fileID: 6449039977072160600, guid: f88149b15041db745855b424ef1b658c, type: 3}
@@ -159,6 +161,18 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &6013002726109019465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6285431216612169769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7255130cb7206ad47b92559d2506f564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7665336643008248022
 GameObject:
   m_ObjectHideFlags: 0
