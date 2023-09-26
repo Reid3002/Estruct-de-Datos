@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
 
 public class PoolStack : MonoBehaviour, IStack<GameObject>
@@ -50,7 +46,7 @@ public class PoolStack : MonoBehaviour, IStack<GameObject>
         }
         else
         {
-            UnityEngine.Debug.Log("Tried to add a null item to the Pool");
+            Debug.Log("Tried to add a null item to the Pool");
         }
 
     }
@@ -66,14 +62,14 @@ public class PoolStack : MonoBehaviour, IStack<GameObject>
             index--;
 
             temp.transform.position = new Vector3(
-                UnityEngine.Random.Range(this.gameManager.minLocation.x, this.gameManager.maxLocation.x),
-                UnityEngine.Random.Range(this.gameManager.minLocation.y, this.gameManager.maxLocation.y),
+                Random.Range(this.gameManager.minLocation.x, this.gameManager.maxLocation.x),
+                Random.Range(this.gameManager.minLocation.y, this.gameManager.maxLocation.y),
                 0);
 
             return temp;
         }
 
-        UnityEngine.Debug.Log("Tried to remove an item from an empty pool");
+        Debug.Log("Tried to remove an item from an empty pool");
         return null;
 
     }

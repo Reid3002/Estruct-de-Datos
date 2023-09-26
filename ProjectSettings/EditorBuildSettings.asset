@@ -9,12 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: bbdca4bd06ab0544abed4b265850f21c
   - enabled: 1
-    path: Assets/Scenes/TestingScenes/Test01.unity
-    guid: e5fba1545c5c8ea4a8477fd889918b55
-  - enabled: 1
     path: Assets/Scenes/Defeat.unity
     guid: b7612a7c6e5e22c448bb29f4d1caa126
   - enabled: 1
     path: Assets/Scenes/Victory.unity
     guid: be37de7356c16434b85f4b0106de80b2
+  - enabled: 1
+    path: Assets/Scenes/TestingScenes/Test01.unity
+    guid: e5fba1545c5c8ea4a8477fd889918b55
+  - enabled: 1
+    path: Assets/Scenes/TestingScenes/Test02.unity
+    guid: 4992c163715831642a7cba3412af90d2
   m_configObjects: {}
