@@ -1,7 +1,5 @@
-using System.ComponentModel;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -60,7 +58,7 @@ public class GameManager : MonoBehaviour
         float t = Time.deltaTime;
 
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || !thePlayer.alive)
         {
             SceneManager.LoadScene(loseScene);
         }

@@ -8,9 +8,11 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] GameObject firstMenu;
 
+
     public int mainMenuScene;
-    public int playableScene;
-   
+    public int levelOne;
+    public int levelTwo;
+
 
     GameObject currentMenu;
 
@@ -22,15 +24,19 @@ public class MainMenu : MonoBehaviour
 
     public void GoScene()
     {
-        SceneManager.LoadScene(playableScene);
+        SceneManager.LoadScene(levelOne);
+    }
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene(mainMenuScene);
     }
     public void Nivel1()
     {
-        SceneManager.LoadScene(playableScene);
+        SceneManager.LoadScene(levelOne);
     }
     public void Nivel2()
     {
-        SceneManager.LoadScene(playableScene);
+        SceneManager.LoadScene(levelTwo);
     }
     public void Exit()
     {

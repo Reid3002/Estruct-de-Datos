@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PoolStack : MonoBehaviour, IStack<GameObject>
 {
     private GameObject[] enemyPool;
     [SerializeField] int Size = 50;
-    private int index;
+    public int index;
     [SerializeField] float spawnTimeInSeconds = 10;
     private float timerCount = 0;
     [SerializeField] EnemyQueue enemyQueueScript;
@@ -29,33 +27,19 @@ public class PoolStack : MonoBehaviour, IStack<GameObject>
     {
         if (!IsStackEmpty())
         {
-            bool timerExpired = ReleaseTimer();
-
-            if (timerExpired) 
-            {
-                this.enemyQueueScript.Enqueue(Unstack());// Lo saca del la pila del pool y lo mete en la cola de enemigos.
-                timerCount = 0;
-            }            
+            ReleaseTimer();
         }
-        else 
-        { 
-            if(timerCount != 0) 
-            {
-                timerCount = 0;
-            }
-        }
-
     }
 
-    public void StartStack(int size) 
+    public void StartStack(int size)
     {
         enemyPool = new GameObject[size];
         index = 0;
     }
 
-    public void Stack(GameObject item) 
-    { 
-        if(item != null)
+    public void Stack(GameObject item)
+    {
+        if (item != null)
         {
             enemyPool[index] = item;
             index++;
@@ -71,15 +55,15 @@ public class PoolStack : MonoBehaviour, IStack<GameObject>
     {
         if (!IsStackEmpty())
         {
-            GameObject temp = enemyPool[index];
+            GameObject temp = enemyPool[index - 1];
 
-            enemyPool[index] = null;
+            enemyPool[index - 1] = null;
 
             index--;
 
             temp.transform.position = new Vector3(
-                Random.Range(this.gameManager.minLocation.x, this.gameManager.maxLocation.x), 
-                Random.Range(this.gameManager.minLocation.y, this.gameManager.maxLocation.y), 
+                Random.Range(this.gameManager.minLocation.x, this.gameManager.maxLocation.x),
+                Random.Range(this.gameManager.minLocation.y, this.gameManager.maxLocation.y),
                 0);
 
             return temp;
@@ -100,16 +84,17 @@ public class PoolStack : MonoBehaviour, IStack<GameObject>
 
     }
 
-    private bool ReleaseTimer()
+    private void ReleaseTimer()
     {
         if (timerCount < spawnTimeInSeconds)
         {
             timerCount += Time.deltaTime;
-            return false;
+
         }
-        else
+        else if (timerCount >= spawnTimeInSeconds)
         {
-            return true;
+            this.enemyQueueScript.Enqueue(Unstack());// Lo saca del la pila del pool y lo mete en la cola de enemigos.
+            timerCount = 0;
         }
     }
 }
