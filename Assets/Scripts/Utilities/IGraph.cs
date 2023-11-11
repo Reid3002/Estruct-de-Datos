@@ -4,12 +4,12 @@ using UnityEngine;
 
 public interface IGraph
 {
-    void InicializarGrafo();
-    void AgregarVertice(int v);
-    void EliminarVertice(int v);
-    ConjuntoTDA Vertices();
-    void AgregarArista(int v1, int v2, int peso);
-    void EliminarArista(int v1, int v2);
-    bool ExisteArista(int v1, int v2);
-    int PesoArista(int v1, int v2);
+    void InitializeGraph();
+    void AddVertex(int id, Transform transform);
+    void RemoveVertex(int id);
+    //ConjuntoTDA Vertices();
+    void AddEdge(int id1, int id2, int peso);
+    void RemoveEdge(int id1, int id2);
+    bool ExistsEdge(int id1, int id2);
+    int WeightEdge(int id1, int id2);
 }

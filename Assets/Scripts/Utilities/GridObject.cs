@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GridObject : MonoBehaviour
 {
-    private static float rayLength = 0.3f;
+    private static float rayLength = 0.8f;
     public bool isNavigable;
     public bool hasPlayer;
     public bool hasEnemy;
