@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GraphMA : IGraph
+public class GraphMA : MonoBehaviour, IGraph
 {
     static int n = 100;
     public int[,] MAdy;
@@ -70,10 +70,10 @@ public class GraphMA : IGraph
     //    return Vert;
     //}
 
-    public void AddEdge(int v1, int v2, int weight)
+    public void AddEdge(int id1, int id2, int weight)
     {
-        int o = Vertex2Index(v1);
-        int d = Vertex2Index(v2);
+        int o = Vertex2Index(id1);
+        int d = Vertex2Index(id2);
         MAdy[o, d] = weight;
     }
 

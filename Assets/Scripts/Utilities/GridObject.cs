@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class GridObject : MonoBehaviour
 {
-    private static float rayLength = 0.8f;
+    public int id;
     public bool isNavigable;
     public bool hasPlayer;
-    public bool hasEnemy;
-    public NavigationNodeTestScript node;
 
     private LayerMask layerMask = 6;
-    private GridObject[] adjancentGrids = new GridObject[3];
+    private static float rayLength = 0.8f;
+    public GridObject[] adjancentGrids = new GridObject[3];
 
-    public string testString = "";
     private void Awake()
     {
         RaycastHit2D up = Physics2D.Raycast(this.transform.position, transform.up * rayLength,layerMask);
@@ -57,11 +55,6 @@ public class GridObject : MonoBehaviour
             hasPlayer = true;
         }
 
-        if (collision.CompareTag("Enemy"))
-        {
-            hasEnemy = true;
-        }
-
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -77,11 +70,6 @@ public class GridObject : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             hasPlayer = false;
-        }
-
-        if (collision.CompareTag("Enemy"))
-        {
-            hasEnemy = false;
         }
     }
 

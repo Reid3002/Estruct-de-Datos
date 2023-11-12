@@ -13,7 +13,7 @@ public class Grid : MonoBehaviour
         InsertObjectsToGrid(gridObjects);
 
 
-        print("Testing middle grid object string value: " + GetGridObject(new Vector2(0, 0)).testString);
+        //print("Testing middle grid object string value: " + GetGridObject(new Vector2(0, 0)).testString);
     }
 
     public void InsertObjectsToGrid(GridObject[] objects)
