@@ -42,7 +42,7 @@ public class GridObject : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            GameManager.playerPosition = this;
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().playerPosition = this;
         }
         else if (collision.CompareTag("Enemy"))
         {
@@ -60,12 +60,13 @@ public class GridObject : MonoBehaviour
 
         if (collision.CompareTag("Player"))
         {
-            GameManager.playerPosition = this;
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().playerPosition = this;
         }
         else if (collision.CompareTag("Enemy"))
         {
             collision.GetComponent<Enemy>().currentNodeId = id;
         }
+
     }
 
 

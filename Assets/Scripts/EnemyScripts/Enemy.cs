@@ -33,14 +33,14 @@ public class Enemy : EnemyController
     // Update is called once per frame
     void Update()
     {
-        if (nextNode == null && GameManager.playerPosition != null)
+        if (nextNode == null && Manager.playerPosition != null)
         {
-            dijkstra.DijkstraProcess(gameManager.GetComponent<GraphMA>(), currentNodeId, GameManager.playerPosition.id);
+            dijkstra.DijkstraProcess(gameManager.GetComponent<GraphMA>(), currentNodeId, Manager.playerPosition.id);
             nextNode = dijkstra.nodos[0].position;
         }
         else if (nextNode == transform.position)
         {
-            dijkstra.DijkstraProcess(gameManager.GetComponent<GraphMA>(), currentNodeId, GameManager.playerPosition.id);
+            dijkstra.DijkstraProcess(gameManager.GetComponent<GraphMA>(), currentNodeId, Manager.playerPosition.id);
             nextNode = dijkstra.nodos[0].position;
         }
 

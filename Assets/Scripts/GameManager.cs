@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     [Header("Game table")]
     public Vector2 minLocation = new Vector2(-8.5f, -5);
     public Vector2 maxLocation = new Vector2(9, 4);
-    public static GridObject playerPosition;
+    public GridObject playerPosition;
 
     [Header("Settings")]
     public float pointsForWinScene = 500;
