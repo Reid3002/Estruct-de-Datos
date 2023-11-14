@@ -6,9 +6,9 @@ using UnityEngine;
 public class Dijkstra : MonoBehaviour
 {
     public static int[] distance;
-    public static Transform[] nodos;
+    public Transform[] nodos;
 
-    private static int MinimumDistance(int[] distance, bool[] shortestPathTreeSet, int verticesCount)
+    private int MinimumDistance(int[] distance, bool[] shortestPathTreeSet, int verticesCount)
     {
         int min = int.MaxValue;
         int minIndex = 0;
@@ -25,7 +25,7 @@ public class Dijkstra : MonoBehaviour
         return minIndex;
     }
 
-    public static void DijkstraProcess(GraphMA grafo, int source)
+    public void DijkstraProcess(GraphMA grafo, int source, int target)
     {
         int[,] graph = grafo.MAdy;
         int verticesCount = grafo.totalNodes;
@@ -52,6 +52,11 @@ public class Dijkstra : MonoBehaviour
         {
             int u = MinimumDistance(distance, shortestPathTreeSet, verticesCount);
             shortestPathTreeSet[u] = true;
+
+            if (u == target)
+            {
+                break;
+            }
 
             for (int v = 0; v < verticesCount; ++v)
             {

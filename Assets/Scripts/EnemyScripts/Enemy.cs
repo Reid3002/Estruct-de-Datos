@@ -13,27 +13,41 @@ public class Enemy : EnemyController
     private float currentStepTime = 0;
 
     [SerializeField] GameObject gameManager;
+    private GameManager Manager;
+    private Dijkstra dijkstra;
     private bool canMove = true;
 
-    private Transform playerTransform; // Reference to the player's transform
+    private Vector3 nextNode;
+    public int currentNodeId;
 
     // Start is called before the first frame update
-    private void Start()
+    private void Awake()
     {
+        Manager = gameManager.GetComponent<GameManager>();
+        dijkstra = gameObject.GetComponent<Dijkstra>();
         gameManager.GetComponent<EnemyQueue>().Enqueue(this.gameObject);
-        this.currentStepTime = this.stepTime;
-
-        // Find and store a reference to the player's transform
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        this.currentStepTime = this.stepTime;        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (playerTransform != null)
+        if (nextNode == null && GameManager.playerPosition != null)
+        {
+            dijkstra.DijkstraProcess(gameManager.GetComponent<GraphMA>(), currentNodeId, GameManager.playerPosition.id);
+            nextNode = dijkstra.nodos[0].position;
+        }
+        else if (nextNode == transform.position)
+        {
+            dijkstra.DijkstraProcess(gameManager.GetComponent<GraphMA>(), currentNodeId, GameManager.playerPosition.id);
+            nextNode = dijkstra.nodos[0].position;
+        }
+
+        if (nextNode != null)
         {
             // Calculate the direction from the enemy to the player
-            Vector3 directionToPlayer = (playerTransform.position - transform.position).normalized;
+            Vector3 directionToPlayer = (nextNode - transform.position).normalized;
 
             if (this.currentStepTime > 0)
                 this.currentStepTime -= Time.deltaTime;
@@ -62,7 +76,7 @@ public class Enemy : EnemyController
                     this.currentStepTime = this.stepTime;
                 }
             }
-        }
+        }        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -71,5 +85,6 @@ public class Enemy : EnemyController
         {
             collision.gameObject.GetComponent<PlayerController>().alive = false;
         }
+        
     }
 }

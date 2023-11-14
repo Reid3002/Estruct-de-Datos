@@ -6,7 +6,7 @@ public class GridObject : MonoBehaviour
 {
     public int id;
     public bool isNavigable;
-    public bool hasPlayer;
+
 
     private LayerMask layerMask = 6;
     private static float rayLength = 0.8f;
@@ -38,21 +38,15 @@ public class GridObject : MonoBehaviour
 
     }
 
-
-    private void Update()
-    {
-        if (hasPlayer)
-        {
-            EnemyManager.playerPosition = this.GetComponent<GridObject>();
-        }
-
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            hasPlayer = true;
+            GameManager.playerPosition = this;
+        }
+        else if (collision.CompareTag("Enemy"))
+        {
+            collision.GetComponent<Enemy>().currentNodeId = id;
         }
 
     }
@@ -63,15 +57,17 @@ public class GridObject : MonoBehaviour
         {
             isNavigable = false;
         }
-    }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
         if (collision.CompareTag("Player"))
         {
-            hasPlayer = false;
+            GameManager.playerPosition = this;
+        }
+        else if (collision.CompareTag("Enemy"))
+        {
+            collision.GetComponent<Enemy>().currentNodeId = id;
         }
     }
+
 
     private void OnDrawGizmos()
     {
