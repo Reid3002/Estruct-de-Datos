@@ -48,7 +48,7 @@ public class GraphMA : MonoBehaviour, IGraph
         totalNodes--;
     }
 
-    private int Vertex2Index(int id)
+    public int Vertex2Index(int id)
     {
         int i = totalNodes - 1;
         while (i >= 0 && IDs[i] != id)
