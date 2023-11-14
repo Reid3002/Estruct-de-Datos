@@ -59,6 +59,11 @@ public class GraphMA : MonoBehaviour, IGraph
         return i;
     }
 
+    public Transform GetTransformById(int id)
+    {
+        return positions[id];
+    }
+
     //public ConjuntoTDA Vertices()
     //{
     //    ConjuntoTDA Vert = new ConjuntoLD();
