@@ -13961,7 +13961,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IDs: 
   positions: []
-  totalNodes: 0
 --- !u!114 &596272660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14137,6 +14136,7 @@ MonoBehaviour:
   - {fileID: 2118545105}
   - {fileID: 1806700750}
   - {fileID: 1211167791}
+  done: 0
 --- !u!1001 &596715145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15099,6 +15099,8 @@ MonoBehaviour:
   stepTime: 0.1
   steps: 1
   gameManager: {fileID: 1522685247}
+  graph: {fileID: 596272659}
+  graphManager: {fileID: 596272660}
   currentNodeId: 0
 --- !u!212 &616589187
 SpriteRenderer:
@@ -59011,6 +59013,8 @@ MonoBehaviour:
   stepTime: 0.1
   steps: 1
   gameManager: {fileID: 1522685247}
+  graph: {fileID: 596272659}
+  graphManager: {fileID: 596272660}
   currentNodeId: 0
 --- !u!61 &2096902606
 BoxCollider2D:

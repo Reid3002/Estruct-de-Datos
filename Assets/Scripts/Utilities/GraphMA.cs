@@ -5,10 +5,10 @@ using UnityEngine;
 public class GraphMA : MonoBehaviour, IGraph
 {
     static int n = 162;
-    public int[,] MAdy;
+    public static int[,] MAdy;
     public int[] IDs;
     public Transform[] positions;
-    public int totalNodes;
+    public static int totalNodes;
 
     public void InitializeGraph()
     {

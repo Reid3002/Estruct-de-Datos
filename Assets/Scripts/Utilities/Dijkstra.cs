@@ -25,10 +25,10 @@ public class Dijkstra : MonoBehaviour
         return minIndex;
     }
 
-    public void DijkstraProcess(GraphMA grafo, int source, int target)
+    public void DijkstraProcess(GraphMA grafo, int source)
     {
-        int[,] graph = grafo.MAdy;
-        int verticesCount = grafo.totalNodes;
+        int[,] graph = GraphMA.MAdy;
+        int verticesCount = GraphMA.totalNodes;
         source = grafo.Vertex2Index(source);
 
         distance = new int[verticesCount];
@@ -52,11 +52,6 @@ public class Dijkstra : MonoBehaviour
         {
             int u = MinimumDistance(distance, shortestPathTreeSet, verticesCount);
             shortestPathTreeSet[u] = true;
-
-            if (u == target)
-            {
-                break;
-            }
 
             for (int v = 0; v < verticesCount; ++v)
             {

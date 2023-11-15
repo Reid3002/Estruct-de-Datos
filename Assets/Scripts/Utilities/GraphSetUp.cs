@@ -6,6 +6,7 @@ public class GraphSetUp : MonoBehaviour
 {
     public GridObject[] nodes;
     private GraphMA matrix;
+    public bool done = false;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -40,6 +41,7 @@ public class GraphSetUp : MonoBehaviour
                 }
             }
         }
+        done = true;
     }
 
     void Start()

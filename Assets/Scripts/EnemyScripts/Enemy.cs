@@ -14,6 +14,8 @@ public class Enemy : EnemyController
 
     [SerializeField] GameObject gameManager;
     private GameManager Manager;
+    [SerializeField] GraphMA graph;
+    [SerializeField] GraphSetUp graphManager;
     private Dijkstra dijkstra;
     private bool canMove = true;
 
@@ -30,17 +32,22 @@ public class Enemy : EnemyController
         
     }
 
+    private void Start()
+    {
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (nextNode == null && Manager.playerPosition != null)
+        if (graphManager.done && nextNode == null)
         {
-            dijkstra.DijkstraProcess(gameManager.GetComponent<GraphMA>(), currentNodeId, Manager.playerPosition.id);
+            dijkstra.DijkstraProcess(graph, currentNodeId);
             nextNode = dijkstra.nodos[0].position;
         }
         else if (nextNode == transform.position)
         {
-            dijkstra.DijkstraProcess(gameManager.GetComponent<GraphMA>(), currentNodeId, Manager.playerPosition.id);
+            dijkstra.DijkstraProcess(graph, currentNodeId);
             nextNode = dijkstra.nodos[0].position;
         }
 
