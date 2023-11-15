@@ -14,6 +14,7 @@ public class GraphSetUp : MonoBehaviour
 
         matrix.InitializeGraph();
 
+
         foreach(var node in nodes)
         {
             matrix.AddVertex(id, node.transform);
