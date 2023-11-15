@@ -14,7 +14,13 @@ public class GridObject : MonoBehaviour
 
     private void Awake()
     {
-        RaycastHit2D up = Physics2D.Raycast(this.transform.position, transform.up * rayLength,layerMask);
+        
+
+    }
+
+    public void DetectNeighbors()
+    {
+        RaycastHit2D up = Physics2D.Raycast(this.transform.position, transform.up * rayLength, layerMask);
         RaycastHit2D right = Physics2D.Raycast(this.transform.position, transform.right * rayLength, layerMask);
         RaycastHit2D left = Physics2D.Raycast(this.transform.position, -transform.right * rayLength, layerMask);
         RaycastHit2D down = Physics2D.Raycast(this.transform.position, -transform.up * rayLength, layerMask);
@@ -35,7 +41,6 @@ public class GridObject : MonoBehaviour
         {
             adjancentGrids[3] = down.rigidbody.gameObject.GetComponent<GridObject>();
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -26,6 +26,7 @@ public class GraphSetUp : MonoBehaviour
 
         for (int i = 0; i < nodes.Length; i++)
         {
+            nodes[i].DetectNeighbors();
             for (int j = 0; j < nodes[i].adjancentGrids.Length; j++)
             {
                 if (nodes[i].adjancentGrids[j] != null && nodes[i].adjancentGrids[j].isNavigable)
