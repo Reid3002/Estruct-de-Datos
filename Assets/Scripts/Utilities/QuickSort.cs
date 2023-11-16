@@ -1,7 +1,7 @@
 
 using static EdibleScoreboard;
 using System.Collections.Generic;
-using static EdibleController;
+using UnityEngine;
 
 public class QuickSort
 {
@@ -53,20 +53,16 @@ public class QuickSort
     // Edible scoreboard
     static private int PartitionEdibleScore(List<EdibleScore> edibleScores, int left, int right)
     {
-        int pivot;
-        int aux = (left + right) / 2;
-        pivot = edibleScores[aux].score;
-
+        int pivot = edibleScores[left].score;
         while (true)
         {
-
             while (edibleScores[left].score < pivot)
                 left++;
 
             while (edibleScores[right].score > pivot)
                 right--;
 
-            if (left <= right)
+            if (left < right)
             {
                 EdibleScore temp = edibleScores[right];
                 edibleScores[right] = edibleScores[left];
@@ -74,24 +70,25 @@ public class QuickSort
                 left++;
                 right--;
             }
-
             else
+            {
                 return right;
+            }
         }
     }
+
     static public void QuickSortEdibleScore(List<EdibleScore> edibleScores, int left, int right)
     {
+        Debug.Log($"Sorting from {left} to {right}");
         int pivot;
 
         if (left < right)
         {
             pivot = PartitionEdibleScore(edibleScores, left, right);
 
-            if (pivot > 1)
-                QuickSortEdibleScore(edibleScores, left, pivot - 1);
-
-            if (pivot + 1 < right)
-                QuickSortEdibleScore(edibleScores, pivot + 1, right);
+            // Recursive calls on both halves of the array
+            QuickSortEdibleScore(edibleScores, left, pivot);
+            QuickSortEdibleScore(edibleScores, pivot + 1, right);
         }
     }
 }
