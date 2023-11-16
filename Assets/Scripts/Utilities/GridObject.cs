@@ -9,7 +9,7 @@ public class GridObject : MonoBehaviour
 
 
     private LayerMask layerMask = 1 << 6;
-    private static float rayLength = 100f;
+    private static float rayLength = 0.6f;
     public GridObject[] adjancentGrids;
 
     private void Awake()
