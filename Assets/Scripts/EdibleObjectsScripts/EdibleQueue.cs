@@ -23,6 +23,8 @@ public class EdibleQueue : MonoBehaviour
 
     public void InitializeQueue()
     {
+        EdibleScoreboard.InitializeEdibleScoreboard();
+
         for (int i = 0; i < maxNextQueueItems; i++)
         {
             this.nextEdible = Random.Range(0, this.edibleTypesAmount);

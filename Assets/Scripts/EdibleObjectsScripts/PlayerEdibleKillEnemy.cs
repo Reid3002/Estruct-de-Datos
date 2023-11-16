@@ -7,17 +7,7 @@ public class PlayerEdibleKillEnemy : EdibleController
 
     public override void OnEated(Collider2D instigator)
     {
+        EdibleScoreboard.AddPointToEdible(this.type);
         Destroy(this.gameObject);
     }
-
-    /*
-    public virtual OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Player detected");
-            gameManager.GetComponent<PoolStack>().Stack(gameManager.GetComponent<EnemyQueue>().Dequeue());
-            Destroy(this.gameObject);
-        }
-    }*/
 }

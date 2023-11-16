@@ -15,6 +15,7 @@ public class PlayerEdibleEmpty : EdibleController
 
     public override void OnEated(Collider2D instigator)
     {
+        EdibleScoreboard.AddPointToEdible(this.type);
         Destroy(this.gameObject);
     }
 }

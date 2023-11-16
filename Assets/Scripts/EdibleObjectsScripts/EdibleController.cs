@@ -26,6 +26,7 @@ public abstract class EdibleController : MonoBehaviour
 
     public virtual void OnEated(Collider2D instigator)
     {
+        EdibleScoreboard.AddPointToEdible(this.type);
         Destroy(this.gameObject);
     }
 

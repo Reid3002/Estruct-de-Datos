@@ -61,11 +61,14 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape) || !thePlayer.alive)
         {
+            EdibleScoreboard.SortScores();
             SceneManager.LoadScene(loseScene);
+
         }
 
         if (this.points >= pointsForWinScene)
         {
+            EdibleScoreboard.SortScores();
             SceneManager.LoadScene(victoryScene);
         }
 
