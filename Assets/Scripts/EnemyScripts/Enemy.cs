@@ -17,9 +17,9 @@ public class Enemy : EnemyController
     [SerializeField] GraphMA graph;
     [SerializeField] GraphSetUp graphManager;
     private Dijkstra dijkstra;
-    private bool canMove = true;
 
-    private Vector3 nextNode;
+    private Transform[] path = new Transform[163];
+    public Vector3 nextNode;
     public int currentNodeId;
 
     // Start is called before the first frame update
@@ -40,15 +40,17 @@ public class Enemy : EnemyController
     // Update is called once per frame
     void Update()
     {
-        if (graphManager.done && nextNode == null)
+        if (graphManager.done)
         {
             dijkstra.DijkstraProcess(graph, currentNodeId);
-            nextNode = dijkstra.nodos[0].position;
+            path = TranlateIds(NarrowResults(dijkstra.nodos, Manager.playerPosition.id.ToString()));
+            nextNode = path[0].position;
         }
         else if (nextNode == transform.position)
         {
             dijkstra.DijkstraProcess(graph, currentNodeId);
-            nextNode = dijkstra.nodos[0].position;
+            path = TranlateIds(NarrowResults(dijkstra.nodos, Manager.playerPosition.id.ToString()));
+            nextNode = path[0].position;
         }
 
         if (nextNode != null)
@@ -86,12 +88,62 @@ public class Enemy : EnemyController
         }        
     }
 
+    private string[] NarrowResults(string[] Ids, string target)
+    {
+        string[] result;
+        Queue<string> temp = new Queue<string>();
+
+        foreach(string id in Ids)
+        {
+            if (id != target)
+            {
+                temp.Enqueue(id);
+            }
+            else if (id == target)
+            {
+                temp.Enqueue(id);
+                break;
+            }
+            
+        }
+        result = temp.ToArray();
+        return result;
+    }
+
+    private Transform[] TranlateIds(string[]Ids)
+    {
+        Transform[] result;
+        Queue<Transform> temp = new Queue<Transform>();
+
+        foreach(string id in Ids)
+        {
+            int intValue = int.Parse(id);
+            temp.Enqueue(graph.GetTransformById(intValue));
+        }
+        result = temp.ToArray();
+        return result;
+    }
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<PlayerController>().alive = false;
         }
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 6)
+        {
+            currentNodeId = collision.GetComponent<GridObject>().id;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
         
     }
 }
