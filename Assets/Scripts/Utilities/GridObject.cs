@@ -5,12 +5,12 @@ using UnityEngine;
 public class GridObject : MonoBehaviour
 {
     public int id;
-    public bool isNavigable;
+    public bool isNavigable = true;
 
 
-    private LayerMask layerMask = 6;
-    private static float rayLength = 0.8f;
-    public GridObject[] adjancentGrids = new GridObject[4];
+    private LayerMask layerMask = 1 << 6;
+    private static float rayLength = 100f;
+    public GridObject[] adjancentGrids;
 
     private void Awake()
     {
@@ -20,27 +20,31 @@ public class GridObject : MonoBehaviour
 
     public void DetectNeighbors()
     {
-        RaycastHit2D up = Physics2D.Raycast(this.transform.position, transform.up * rayLength, layerMask);
-        RaycastHit2D right = Physics2D.Raycast(this.transform.position, transform.right * rayLength, layerMask);
-        RaycastHit2D left = Physics2D.Raycast(this.transform.position, -transform.right * rayLength, layerMask);
-        RaycastHit2D down = Physics2D.Raycast(this.transform.position, -transform.up * rayLength, layerMask);
+        Queue<GridObject> temp = new Queue<GridObject> ();
 
-        if (up != false)
+        RaycastHit2D up = Physics2D.Raycast(gameObject.transform.position + transform.up * 0.3f, transform.up,  rayLength, layerMask);
+        RaycastHit2D right = Physics2D.Raycast(gameObject.transform.position + transform.right * 0.3f, transform.right, rayLength, layerMask);
+        RaycastHit2D left = Physics2D.Raycast(gameObject.transform.position -transform.right * 0.3f, -transform.right, rayLength, layerMask);
+        RaycastHit2D down = Physics2D.Raycast(gameObject.transform.position  -transform.up * 0.3f, -transform.up, rayLength, layerMask);
+
+        if (up.collider != null)
         {
-            adjancentGrids[0] = up.rigidbody.gameObject.GetComponent<GridObject>();
+            temp.Enqueue(up.collider.gameObject.GetComponent<GridObject>());
         }
-        if (right != false)
+        if (right.collider != null)
         {
-            adjancentGrids[1] = right.rigidbody.gameObject.GetComponent<GridObject>();
+            temp.Enqueue(right.collider.gameObject.GetComponent<GridObject>());
         }
-        if (left != false)
+        if (left.collider != null)
         {
-            adjancentGrids[2] = left.rigidbody.gameObject.GetComponent<GridObject>();
+            temp.Enqueue(left.collider.gameObject.GetComponent<GridObject>());
         }
-        if (down != false)
+        if (down.collider != null)
         {
-            adjancentGrids[3] = down.rigidbody.gameObject.GetComponent<GridObject>();
+            temp.Enqueue(down.collider.gameObject.GetComponent<GridObject>());
         }
+
+        adjancentGrids = temp.ToArray();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -77,9 +81,11 @@ public class GridObject : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(this.gameObject.transform.position, this.gameObject.transform.position + transform.up * rayLength);
-        Gizmos.DrawLine(this.gameObject.transform.position, this.gameObject.transform.position + transform.right * rayLength);
+        Gizmos.color = Color.yellow;        
+        Debug.DrawRay(gameObject.transform.position + transform.up * 0.3f, transform.up * rayLength, Color.red);
+        Debug.DrawRay(gameObject.transform.position + transform.right * 0.3f, transform.right * rayLength, Color.yellow);
+        Debug.DrawRay(gameObject.transform.position -transform.right * 0.3f, -transform.right * rayLength, Color.white);
+        Debug.DrawRay(gameObject.transform.position -transform.up * 0.3f, -transform.up * rayLength, Color.blue);
     }
 
 

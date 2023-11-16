@@ -18,7 +18,7 @@ public class GraphSetUp : MonoBehaviour
 
         foreach(var node in nodes)
         {
-            matrix.AddVertex(id, node.transform);
+            matrix.AddVertex(id, node.gameObject.transform);
             node.id = id;
             id++;
         }
