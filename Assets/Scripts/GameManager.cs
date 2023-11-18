@@ -71,11 +71,13 @@ public class GameManager : MonoBehaviour
         this.points += t;
         this.textMesh.text = points.ToString("0");
         this.thePlayer.PlayerUpdate(t);
+        Scoreboard.Instance.Points += t;
     }
 
     public void AddPoints(float quantity)
     {
         this.points += quantity;
+        Scoreboard.Instance.Points += quantity;
     }
 
     public void OnEdibleEated(EdibleController reference)
