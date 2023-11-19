@@ -15056,7 +15056,7 @@ MonoBehaviour:
   lastTurnPosition: {x: 0, y: 0, z: 0}
   newTileSize: 0.5
   stepAmount: 0.05
-  stepTime: 0.1
+  stepTime: 0.05
   steps: 1
   gameManager: {fileID: 1522685247}
   graph: {fileID: 596272659}
@@ -60078,7 +60078,7 @@ MonoBehaviour:
   lastTurnPosition: {x: 0, y: 0, z: 0}
   newTileSize: 0.5
   stepAmount: 0.05
-  stepTime: 0.1
+  stepTime: 0.05
   steps: 1
   gameManager: {fileID: 1522685247}
   graph: {fileID: 596272659}

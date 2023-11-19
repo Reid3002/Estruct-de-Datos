@@ -22,7 +22,6 @@ public class Enemy : EnemyController
     public Transform[] path = new Transform[163];
     public Vector3 nextNode;    
     public int currentNodeId;
-    int index = 0;
 
     // Start is called before the first frame update
     private void Awake()
@@ -46,14 +45,14 @@ public class Enemy : EnemyController
         {
             dijkstra.DijkstraProcess(graph, currentNodeId);
             path = GetNodesPositions(StringToNumbers(NarrowResults(dijkstra.nodos, Manager.playerPosition.id)));
-            nextNode = path[0].position;
+            nextNode = path[1].position;
             start = true;
         }
         else if (nextNode == transform.position)
         {
             dijkstra.DijkstraProcess(graph, currentNodeId);
             path = GetNodesPositions(StringToNumbers(NarrowResults(dijkstra.nodos, Manager.playerPosition.id)));
-            nextNode = path[0].position;
+            nextNode = path[1].position;
         }
 
         if (nextNode != transform.position)
@@ -84,6 +83,7 @@ public class Enemy : EnemyController
 
                     this.transform.position = newPosition;
 
+                    nextNode = ForceRoundPosition(nextNode, stepAmount);
                     this.transform.position = ForceRoundPosition(this.transform.position, stepAmount);
                     this.currentStepTime = this.stepTime;
                 }
