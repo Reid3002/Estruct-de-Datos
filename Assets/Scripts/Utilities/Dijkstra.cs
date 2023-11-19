@@ -116,7 +116,7 @@ public class Dijkstra : MonoBehaviour
                     }
                     else
                     {
-                        nodos[i] = l1[j].ToString();
+                        nodos[i] += " " + l1[j].ToString();
                     }
                 }
             }

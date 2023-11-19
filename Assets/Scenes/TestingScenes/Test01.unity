@@ -7062,6 +7062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &311106352 stripped
 GameObject:
@@ -8607,6 +8608,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &373207087
 PrefabInstance:
@@ -8864,6 +8866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &385845050 stripped
 GameObject:
@@ -15284,7 +15287,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 616589184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.0000997, y: -2.00004, z: 0}
+  m_LocalPosition: {x: 5.0000997, y: -2.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15441,6 +15444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &627041275
 PrefabInstance:
@@ -18115,6 +18119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &722544043
 PrefabInstance:
@@ -18375,6 +18380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &743991403
 PrefabInstance:
@@ -19747,6 +19753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &783776921
 PrefabInstance:
@@ -19939,6 +19946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &800041239
 PrefabInstance:
@@ -20342,6 +20350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &805635924 stripped
 GameObject:
@@ -20690,6 +20699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &827648214
 PrefabInstance:
@@ -21931,6 +21941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &880046329
 GameObject:
@@ -22818,6 +22829,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &900143977
 PrefabInstance:
@@ -23744,6 +23756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &930836232
 PrefabInstance:
@@ -24082,6 +24095,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &939780890
 PrefabInstance:
@@ -24346,6 +24360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &949201478 stripped
 GameObject:
@@ -24392,6 +24407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &956640202
 PrefabInstance:
@@ -24506,6 +24522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!50 &966149716
 Rigidbody2D:
@@ -24542,6 +24559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &967811601
 PrefabInstance:
@@ -25094,6 +25112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &998023325
 PrefabInstance:
@@ -25587,6 +25606,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1032848204
 PrefabInstance:
@@ -25993,6 +26013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1049429144
 PrefabInstance:
@@ -26394,6 +26415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1071337573
 PrefabInstance:
@@ -26505,6 +26527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1075805467
 PrefabInstance:
@@ -28394,6 +28417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &1140869223 stripped
 GameObject:
@@ -28435,6 +28459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1143729488
 PrefabInstance:
@@ -28546,6 +28571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!50 &1148673399
 Rigidbody2D:
@@ -28582,6 +28608,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1157484406
 PrefabInstance:
@@ -28693,6 +28720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1161378360
 PrefabInstance:
@@ -29099,6 +29127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1172391509
 PrefabInstance:
@@ -29580,6 +29609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1194930323
 PrefabInstance:
@@ -30146,6 +30176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!4 &1216897022 stripped
 Transform:
@@ -30335,6 +30366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &1231629876 stripped
 GameObject:
@@ -31049,6 +31081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &1260221606
 GameObject:
@@ -31347,6 +31380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1267613048
 PrefabInstance:
@@ -31461,6 +31495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &1269486413 stripped
 GameObject:
@@ -32097,6 +32132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1290564305
 PrefabInstance:
@@ -32208,6 +32244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &1292280289 stripped
 GameObject:
@@ -32249,6 +32286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1292542113
 PrefabInstance:
@@ -32358,6 +32396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1294684436
 PrefabInstance:
@@ -32766,6 +32805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1310525502
 PrefabInstance:
@@ -33467,6 +33507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1334828741
 PrefabInstance:
@@ -33736,6 +33777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &1343934830 stripped
 GameObject:
@@ -33777,6 +33819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1344339090
 PrefabInstance:
@@ -34182,6 +34225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!50 &1352645082
 Rigidbody2D:
@@ -34218,6 +34262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1358929825
 PrefabInstance:
@@ -34621,6 +34666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &1368043728 stripped
 GameObject:
@@ -34740,6 +34786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1374446582
 PrefabInstance:
@@ -35219,6 +35266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1387622544
 PrefabInstance:
@@ -35330,6 +35378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1389849545
 PrefabInstance:
@@ -35658,6 +35707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1415087494
 PrefabInstance:
@@ -35769,6 +35819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1416681243
 PrefabInstance:
@@ -36101,6 +36152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &1425723682 stripped
 GameObject:
@@ -36293,6 +36345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1439123797
 PrefabInstance:
@@ -36553,6 +36606,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1452230719
 PrefabInstance:
@@ -37218,6 +37272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1479269623
 PrefabInstance:
@@ -37402,6 +37457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1486143510
 PrefabInstance:
@@ -37737,6 +37793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1504962728
 PrefabInstance:
@@ -40900,6 +40957,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1514476100
 PrefabInstance:
@@ -41509,6 +41567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &1538463947 stripped
 GameObject:
@@ -41550,6 +41609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1539024500
 PrefabInstance:
@@ -41661,6 +41721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &1539242478 stripped
 GameObject:
@@ -41780,6 +41841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1545304419
 PrefabInstance:
@@ -42035,6 +42097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1552907289
 PrefabInstance:
@@ -42146,6 +42209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1553360087
 PrefabInstance:
@@ -42257,6 +42321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!50 &1554008153
 Rigidbody2D:
@@ -42293,6 +42358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1554681386
 PrefabInstance:
@@ -42625,6 +42691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1566691551
 PrefabInstance:
@@ -42812,6 +42879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &1571851570 stripped
 GameObject:
@@ -42853,6 +42921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1572981315
 PrefabInstance:
@@ -43266,6 +43335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1585863941
 PrefabInstance:
@@ -43525,6 +43595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1587311673
 PrefabInstance:
@@ -43707,6 +43778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!50 &1591571050
 Rigidbody2D:
@@ -43743,6 +43815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1593929910
 PrefabInstance:
@@ -44000,6 +44073,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &1598796763 stripped
 GameObject:
@@ -44041,6 +44115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &1600668879 stripped
 GameObject:
@@ -44082,6 +44157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1602600554
 PrefabInstance:
@@ -44193,6 +44269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1604657967
 PrefabInstance:
@@ -44526,6 +44603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1611283547
 PrefabInstance:
@@ -45221,6 +45299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!50 &1636367483
 Rigidbody2D:
@@ -45257,6 +45336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &1641690602 stripped
 GameObject:
@@ -45298,6 +45378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1642875410
 PrefabInstance:
@@ -45701,6 +45782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1654802869
 PrefabInstance:
@@ -45888,6 +45970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1667978422
 PrefabInstance:
@@ -46145,6 +46228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1686608386
 PrefabInstance:
@@ -46327,6 +46411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1700872447
 PrefabInstance:
@@ -46956,6 +47041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1710182814
 PrefabInstance:
@@ -47067,6 +47153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!50 &1712902900
 Rigidbody2D:
@@ -47103,6 +47190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1713109547
 PrefabInstance:
@@ -47509,6 +47597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1728410207
 PrefabInstance:
@@ -48075,6 +48164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1741510680
 PrefabInstance:
@@ -48186,6 +48276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1741691927
 PrefabInstance:
@@ -48519,6 +48610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &1759562898 stripped
 GameObject:
@@ -48560,6 +48652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1760742628
 PrefabInstance:
@@ -48817,6 +48910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1766150955
 PrefabInstance:
@@ -49004,6 +49098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1773188615
 PrefabInstance:
@@ -49115,6 +49210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!50 &1773190250
 Rigidbody2D:
@@ -49151,6 +49247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!50 &1773945310
 Rigidbody2D:
@@ -49187,6 +49284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!50 &1774010717
 Rigidbody2D:
@@ -49223,6 +49321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &1775375890 stripped
 GameObject:
@@ -49264,6 +49363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1778283762
 PrefabInstance:
@@ -49448,6 +49548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!50 &1779362311
 Rigidbody2D:
@@ -49484,6 +49585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1781331022
 PrefabInstance:
@@ -49741,6 +49843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1781690938
 PrefabInstance:
@@ -49925,6 +50028,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1782906941
 PrefabInstance:
@@ -50182,6 +50286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1797707683
 PrefabInstance:
@@ -51375,6 +51480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1807716263
 PrefabInstance:
@@ -51489,6 +51595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1811651476
 PrefabInstance:
@@ -51600,6 +51707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!50 &1812058448
 Rigidbody2D:
@@ -51636,6 +51744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1812120635
 PrefabInstance:
@@ -51896,6 +52005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1829792758
 PrefabInstance:
@@ -52007,6 +52117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!50 &1836593741
 Rigidbody2D:
@@ -52043,6 +52154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1836720341
 PrefabInstance:
@@ -52304,6 +52416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1839886440
 PrefabInstance:
@@ -53003,6 +53116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1861185495
 PrefabInstance:
@@ -53701,6 +53815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &1880210443 stripped
 GameObject:
@@ -53742,6 +53857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &1880235189 stripped
 GameObject:
@@ -53783,6 +53899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1881526930
 PrefabInstance:
@@ -53894,6 +54011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1885007099
 PrefabInstance:
@@ -54003,6 +54121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &1887498676 stripped
 GameObject:
@@ -54044,6 +54163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &1890935086 stripped
 GameObject:
@@ -54085,6 +54205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1891337248
 PrefabInstance:
@@ -54272,6 +54393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1903982191
 PrefabInstance:
@@ -54383,6 +54505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!50 &1910053049
 Rigidbody2D:
@@ -54419,6 +54542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!50 &1911285693
 Rigidbody2D:
@@ -54455,6 +54579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1911876947
 PrefabInstance:
@@ -54787,6 +54912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1917787543
 PrefabInstance:
@@ -54971,6 +55097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1922093116
 PrefabInstance:
@@ -55155,6 +55282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1928760777
 PrefabInstance:
@@ -55269,6 +55397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1929717687
 PrefabInstance:
@@ -55456,6 +55585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1937777724
 PrefabInstance:
@@ -56076,6 +56206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!50 &1959307794
 Rigidbody2D:
@@ -56112,6 +56243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1961765178
 PrefabInstance:
@@ -56299,6 +56431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1963951215
 PrefabInstance:
@@ -56919,6 +57052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &1990392124
 PrefabInstance:
@@ -57252,6 +57386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &2000067097
 PrefabInstance:
@@ -57363,6 +57498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &2000708783 stripped
 GameObject:
@@ -57404,6 +57540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &2003050328
 PrefabInstance:
@@ -57588,6 +57725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &2016462732 stripped
 GameObject:
@@ -57629,6 +57767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &2016878142
 PrefabInstance:
@@ -58103,6 +58242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &2033351020 stripped
 GameObject:
@@ -58144,6 +58284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &2033354171
 PrefabInstance:
@@ -58331,6 +58472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &2036773788
 PrefabInstance:
@@ -58445,6 +58587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &2043687099
 PrefabInstance:
@@ -58559,6 +58702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &2054179592
 PrefabInstance:
@@ -58965,6 +59109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &2072695061
 PrefabInstance:
@@ -59225,6 +59370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &2084122930
 PrefabInstance:
@@ -59336,6 +59482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &2085416813
 PrefabInstance:
@@ -59450,6 +59597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &2087555603
 PrefabInstance:
@@ -59561,6 +59709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!50 &2089374457
 Rigidbody2D:
@@ -59597,6 +59746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &2091109011
 PrefabInstance:
@@ -59708,6 +59858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &2092805779
 PrefabInstance:
@@ -59819,6 +59970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &2096902601
 GameObject:
@@ -59901,7 +60053,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2096902601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.52, y: 1.93, z: 0}
+  m_LocalPosition: {x: -4.02, y: 1.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -60341,6 +60493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &2106297311 stripped
 GameObject:
@@ -60382,6 +60535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1 &2112784228 stripped
 GameObject:
@@ -60423,6 +60577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &2115271722
 PrefabInstance:
@@ -60534,6 +60689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &2115762186
 PrefabInstance:
@@ -60648,6 +60804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!50 &2118545109
 Rigidbody2D:
@@ -60684,6 +60841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &2119496164
 PrefabInstance:
@@ -60871,6 +61029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!50 &2129626943
 Rigidbody2D:
@@ -60907,6 +61066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &2130919058
 PrefabInstance:
@@ -61164,6 +61324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &2131426411
 PrefabInstance:
@@ -61643,6 +61804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNavigable: 1
+  gManagerScript: {fileID: 0}
   adjancentGrids: []
 --- !u!1001 &2143654099
 PrefabInstance:

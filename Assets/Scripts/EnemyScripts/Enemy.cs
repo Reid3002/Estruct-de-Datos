@@ -17,6 +17,7 @@ public class Enemy : EnemyController
     [SerializeField] GraphMA graph;
     [SerializeField] GraphSetUp graphManager;
     private Dijkstra dijkstra;
+    private bool start = false;
 
     public Transform[] path = new Transform[163];
     public Vector3 nextNode;    
@@ -41,20 +42,21 @@ public class Enemy : EnemyController
     // Update is called once per frame
     void Update()
     {
-        if (graphManager.done)
+        if (graphManager.done && start == false)
         {
             dijkstra.DijkstraProcess(graph, currentNodeId);
-
-            path = TranslateIds(NarrowResults(dijkstra.nodos, Manager.playerPosition.id.ToString()));
-
+            path = GetNodesPositions(StringToNumbers(NarrowResults(dijkstra.nodos, Manager.playerPosition.id)));
+            nextNode = path[0].position;
+            start = true;
         }
         else if (nextNode == transform.position)
         {
-            index++;
-            nextNode = path[index].position;
+            dijkstra.DijkstraProcess(graph, currentNodeId);
+            path = GetNodesPositions(StringToNumbers(NarrowResults(dijkstra.nodos, Manager.playerPosition.id)));
+            nextNode = path[0].position;
         }
 
-        if (nextNode != null)
+        if (nextNode != transform.position)
         {
             // Calculate the direction from the enemy to the player
             Vector3 directionToPlayer = (nextNode - transform.position).normalized;
@@ -89,37 +91,43 @@ public class Enemy : EnemyController
         }        
     }
 
-    private string[] NarrowResults(string[] Ids, string target)
+    private string NarrowResults(string[] Ids, int target)
     {
-        string[] result;
-        Queue<string> temp = new Queue<string>();
-
-        foreach (string id in Ids)
-        {
-            if (id != target)
-            {
-                temp.Enqueue(id);
-            }
-            else if (id == target)
-            {
-                temp.Enqueue(id);
-                break;
-            }
-
-        }
-        result = temp.ToArray();
-        return result;
+        return Ids[target];
     }
 
-    private Transform[] TranslateIds(string[] Ids)
+    private int[] StringToNumbers(string Ids)
+    {
+        string[] numbersInString = Ids.Split(' ');
+
+        int[] numbers = new int[numbersInString.Length];
+
+        for (int i = 0; i < numbersInString.Length; i++)
+        {
+            // Trim any leading or trailing whitespaces
+            string trimmedString = numbersInString[i].Trim();
+
+            // Parse the substring as an integer
+            if (int.TryParse(trimmedString, out int parsedNumber))
+            {               
+                numbers[i] = parsedNumber;               
+            }
+            else
+            {                
+                Debug.LogWarning("Failed to parse: " + trimmedString);
+            }
+        }
+        return numbers;
+    }
+
+    private Transform[] GetNodesPositions(int[] nodes)
     {
         Transform[] result;
         Queue<Transform> temp = new Queue<Transform>();
 
-        foreach (string id in Ids)
+        for (int i = 0; i < nodes.Length; i++)
         {
-            int intValue = int.Parse(id);
-            temp.Enqueue(graph.GetTransformById(intValue));
+            temp.Enqueue(graph.GetTransformById(nodes[i]));
         }
         result = temp.ToArray();
         return result;
