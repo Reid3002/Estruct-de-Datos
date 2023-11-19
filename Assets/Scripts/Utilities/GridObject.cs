@@ -7,15 +7,14 @@ public class GridObject : MonoBehaviour
     public int id;
     public bool isNavigable = true;
 
-
+    public GameManager gManagerScript;
     private LayerMask layerMask = 1 << 6;
     private static float rayLength = 0.6f;
     public GridObject[] adjancentGrids;
 
-    private void Awake()
+    private void Start()
     {
-        
-
+        gManagerScript = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
     public void DetectNeighbors()
@@ -51,7 +50,7 @@ public class GridObject : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().playerPosition = this;
+            gManagerScript.playerPosition = this;
         }
         else if (collision.CompareTag("Enemy"))
         {
@@ -69,7 +68,7 @@ public class GridObject : MonoBehaviour
 
         if (collision.CompareTag("Player"))
         {
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().playerPosition = this;
+            gManagerScript.playerPosition = this;
         }
         else if (collision.CompareTag("Enemy"))
         {
