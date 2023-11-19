@@ -21,6 +21,7 @@ public class Enemy : EnemyController
     public Transform[] path = new Transform[163];
     public Vector3 nextNode;    
     public int currentNodeId;
+    int index = 0;
 
     // Start is called before the first frame update
     private void Awake()
@@ -40,17 +41,17 @@ public class Enemy : EnemyController
     // Update is called once per frame
     void Update()
     {
-        if (graphManager.done && nextNode == null)
+        if (graphManager.done)
         {
             dijkstra.DijkstraProcess(graph, currentNodeId);
+
             path = TranslateIds(NarrowResults(dijkstra.nodos, Manager.playerPosition.id.ToString()));
-            nextNode = path[0].position;
+
         }
         else if (nextNode == transform.position)
         {
-            dijkstra.DijkstraProcess(graph, currentNodeId);
-            path = TranslateIds(NarrowResults(dijkstra.nodos, Manager.playerPosition.id.ToString()));
-            nextNode = path[0].position;
+            index++;
+            nextNode = path[index].position;
         }
 
         if (nextNode != null)
