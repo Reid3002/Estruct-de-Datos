@@ -8,9 +8,9 @@ public class LevelsManager : MonoBehaviour
 {
     private LevelsABB tree;
     public bool active = false;
-    private int currentLevel = 1;
+    public int currentLevel = 1;
     public LevelNode[] GameLevels;
-    private string nextLevel;
+    private string nextLevel = "null";
     public float score = 0;
 
     private void Awake()
@@ -41,9 +41,16 @@ public class LevelsManager : MonoBehaviour
         if (active)
         {
             NextLevelCalc();
-            SceneManager.LoadScene(nextLevel);
-            currentLevel++;
-            active = false;
+            if (nextLevel != "null")
+            {
+                SceneManager.LoadScene(nextLevel);
+                currentLevel++;
+                active = false;
+            }
+            else
+            {
+                GameObject.Find("Player").GetComponent<PlayerController>().alive = false;
+            }
         }
     }
 
@@ -61,11 +68,11 @@ public class LevelsManager : MonoBehaviour
             availableLevels.Enqueue(node);
         }       
 
-        while (availableLevels.Count > 0 && level != (2^(currentLevel-1)-1))
+        while (availableLevels.Count > 0 /*&& level != (2^(currentLevel-1)-1)*/)
         {             
             node = availableLevels.Dequeue();
 
-            if (node.level > currentLevel)
+            if (node.level == currentLevel+1)
             {
                 temp.Enqueue(node);
                 i++;

@@ -94,6 +94,7 @@ public class GameManager : MonoBehaviour
         reference.OnEatedEvent -= OnEdibleEated;
         AddPoints(reference.pointQuantity);
         this.edibleScript.NextEdible();
+        this.gameObject.GetComponent<Timer>().AddSeconds(3);
 
         switch (reference.type)
         {

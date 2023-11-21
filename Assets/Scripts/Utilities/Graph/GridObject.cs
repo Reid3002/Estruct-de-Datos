@@ -48,7 +48,7 @@ public class GridObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 7)
+        if (collision.CompareTag("Obstacle"))
         {
             isNavigable = false;
         }
@@ -65,7 +65,7 @@ public class GridObject : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.layer ==7)
+        if (collision.CompareTag("Obstacle"))
         {
             isNavigable = false;
         }

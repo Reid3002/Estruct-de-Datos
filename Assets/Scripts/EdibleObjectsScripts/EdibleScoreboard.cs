@@ -3,7 +3,7 @@ using UnityEngine;
 using static EdibleController;
 
 public static class EdibleScoreboard
-{
+{    
     public class EdibleScore
     {
         public EdibleType type;

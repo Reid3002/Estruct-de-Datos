@@ -676,6 +676,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4132703310928204782, guid: 954e45a276d0a2947906b6258f8990cd, type: 3}
+      propertyPath: GameLevels.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132703310928204782, guid: 954e45a276d0a2947906b6258f8990cd, type: 3}
+      propertyPath: GameLevels.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: b6f0872ce87607b4bb4048218c3ca649, type: 2}
+    - target: {fileID: 4132703310928204782, guid: 954e45a276d0a2947906b6258f8990cd, type: 3}
+      propertyPath: GameLevels.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: e0ccb1f8d98af20488d40e0459fdecb0, type: 2}
+    - target: {fileID: 4132703310928204782, guid: 954e45a276d0a2947906b6258f8990cd, type: 3}
+      propertyPath: GameLevels.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 45b6f2dcbf9331549a6fc2b3c14a0fcf, type: 2}
+    - target: {fileID: 4132703310928204782, guid: 954e45a276d0a2947906b6258f8990cd, type: 3}
+      propertyPath: GameLevels.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f751b8d4145bf04c8b5f5ad55cb317e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 954e45a276d0a2947906b6258f8990cd, type: 3}
 --- !u!1001 &6285431215393848571
