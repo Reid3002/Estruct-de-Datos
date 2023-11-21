@@ -11,7 +11,7 @@ public class LevelsManager : MonoBehaviour
     private int currentLevel = 1;
     public LevelNode[] GameLevels;
     private string nextLevel;
-    public int score =10;
+    public float score = 0;
 
     private void Awake()
     {
@@ -56,10 +56,10 @@ public class LevelsManager : MonoBehaviour
         Queue<LevelNode> temp = new Queue<LevelNode>();
         LevelNode[] elegibleLevels;
 
-        //if (node != null)
-        //{
+        if (node != null)
+        {
             availableLevels.Enqueue(node);
-        //}       
+        }       
 
         while (availableLevels.Count > 0 && level != (2^(currentLevel-1)-1))
         {             

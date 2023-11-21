@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6285431216612169769}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0078348, y: 1.0078348, z: 1.0078348}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6139814188582335084}
@@ -112,7 +112,7 @@ MonoBehaviour:
   testTail2: {fileID: 6449039977072160600, guid: f88149b15041db745855b424ef1b658c, type: 3}
   newTileSize: 0.5
   stepAmount: 0.05
-  stepTime: 0.1
+  stepTime: 0.0001
   steps: 1
 --- !u!61 &6285431216612169773
 BoxCollider2D:

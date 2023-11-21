@@ -61,10 +61,7 @@ public class PoolStack : MonoBehaviour, IStack<GameObject>
 
             index--;
 
-            temp.transform.position = new Vector3(
-                Random.Range(this.gameManager.minLocation.x, this.gameManager.maxLocation.x),
-                Random.Range(this.gameManager.minLocation.y, this.gameManager.maxLocation.y),
-                0);
+            temp.transform.position = RespawnPoint();
 
             return temp;
         }
@@ -96,5 +93,21 @@ public class PoolStack : MonoBehaviour, IStack<GameObject>
             this.enemyQueueScript.Enqueue(Unstack());// Lo saca del la pila del pool y lo mete en la cola de enemigos.
             timerCount = 0;
         }
+    }
+
+    private Vector3 RespawnPoint()
+    {
+        bool success = false;
+        GridObject temp = null;
+        while (success == false)
+        {
+            temp = gameManager.GetComponent<Grid>().gridObjects[Random.Range(0, gameManager.GetComponent<Grid>().gridObjects.Length)];
+            if (temp != null && temp.isNavigable)
+            {
+                success = true;
+            }
+        }
+        return temp.gameObject.transform.position;
+       
     }
 }

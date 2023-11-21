@@ -11,8 +11,14 @@ public class Timer : MonoBehaviour
     [SerializeField] Text screenTimer;
     private string timeAsText;
     private float seconds = 60;
-    [SerializeField] LevelsManager levelsManager;
+    private LevelsManager levelsManager;
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        levelsManager = GameObject.Find("LevelManager").GetComponent<LevelsManager>();
+
+    }
     void Start()
     {
         currentTime = startingTime;
@@ -37,7 +43,11 @@ public class Timer : MonoBehaviour
                 seconds--;
             }
         }
-        else { levelsManager.active = true; }
+        else 
+        {
+            levelsManager.score += gameObject.GetComponent<GameManager>().points;
+            levelsManager.active = true;            
+        }
         
         
     }
