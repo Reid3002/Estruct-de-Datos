@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     private PoolStack poolStackScript;
 
     private bool start = false;
+    private GraphSetUp graphManager;
     private void Awake()
     {
         if (Instance == null)
@@ -51,37 +52,42 @@ public class GameManager : MonoBehaviour
 
         this.edibleScript.edibleTypesAmount = this.edibleScript.edibleTypesAmount = System.Enum.GetNames(typeof(EdibleController.EdibleType)).Length;
         this.edibleScript.InitializeQueue();
+        graphManager = GameObject.Find("GraphManager").GetComponent<GraphSetUp>();
         //this.edibleScript.NextEdible();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (start == false)
+        if (graphManager.done)
         {
-            this.edibleScript.NextEdible();
-            start = true;
+            if (start == false)
+            {
+                this.edibleScript.NextEdible();
+                start = true;
+            }
+
+            float t = Time.deltaTime;
+
+
+            if (Input.GetKeyDown(KeyCode.Escape) || !thePlayer.alive)
+            {
+                EdibleScoreboard.SortScores();
+                SceneManager.LoadScene(loseScene);
+
+            }
+
+            if (this.points >= pointsForWinScene)
+            {
+                EdibleScoreboard.SortScores();
+                SceneManager.LoadScene(victoryScene);
+            }
+
+            this.points += t;
+            this.textMesh.text = points.ToString("0");
+            this.thePlayer.PlayerUpdate(t);
         }
-
-        float t = Time.deltaTime;
-
-
-        if (Input.GetKeyDown(KeyCode.Escape) || !thePlayer.alive)
-        {
-            EdibleScoreboard.SortScores();
-            SceneManager.LoadScene(loseScene);
-
-        }
-
-        if (this.points >= pointsForWinScene)
-        {
-            EdibleScoreboard.SortScores();
-            SceneManager.LoadScene(victoryScene);
-        }
-
-        this.points += t;
-        this.textMesh.text = points.ToString("0");
-        this.thePlayer.PlayerUpdate(t);
+        
     }
 
     public void AddPoints(float quantity)

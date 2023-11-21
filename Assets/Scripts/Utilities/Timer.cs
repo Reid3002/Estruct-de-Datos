@@ -45,7 +45,7 @@ public class Timer : MonoBehaviour
         }
         else 
         {
-            levelsManager.score += gameObject.GetComponent<GameManager>().points;
+            levelsManager.score = gameObject.GetComponent<GameManager>().points;
             levelsManager.active = true;            
         }
         

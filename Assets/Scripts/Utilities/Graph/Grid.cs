@@ -7,7 +7,7 @@ public class Grid : MonoBehaviour
     [Header("Grid")]
     public Dictionary<Vector2, GridObject> grid = new Dictionary<Vector2, GridObject>();
     public GridObject[] gridObjects;
-
+    
     void Start()
     {
         InsertObjectsToGrid(gridObjects);
