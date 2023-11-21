@@ -48,6 +48,10 @@ public class GridObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.layer == 7)
+        {
+            isNavigable = false;
+        }
         if (collision.CompareTag("Player"))
         {
             gManagerScript.playerPosition = this;
@@ -55,13 +59,13 @@ public class GridObject : MonoBehaviour
         else if (collision.CompareTag("Enemy"))
         {
             collision.GetComponent<Enemy>().currentNodeId = id;
-        }
+        }        
 
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Obstacle"))
+        if (collision.gameObject.layer ==7)
         {
             isNavigable = false;
         }

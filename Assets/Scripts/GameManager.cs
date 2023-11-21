@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     private EnemyQueue enemyQueueScript;
     private PoolStack poolStackScript;
 
+    private bool start = false;
     private void Awake()
     {
         if (Instance == null)
@@ -50,12 +51,18 @@ public class GameManager : MonoBehaviour
 
         this.edibleScript.edibleTypesAmount = this.edibleScript.edibleTypesAmount = System.Enum.GetNames(typeof(EdibleController.EdibleType)).Length;
         this.edibleScript.InitializeQueue();
-        this.edibleScript.NextEdible();
+        //this.edibleScript.NextEdible();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (start == false)
+        {
+            this.edibleScript.NextEdible();
+            start = true;
+        }
+
         float t = Time.deltaTime;
 
 

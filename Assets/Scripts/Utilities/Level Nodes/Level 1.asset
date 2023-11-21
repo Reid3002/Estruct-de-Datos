@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   sceneName: Level 1
-  index: 1
+  index: 100
   level: 1
