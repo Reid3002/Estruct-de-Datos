@@ -27,7 +27,7 @@ public class Timer : MonoBehaviour
         {
             if (seconds == 0)
             {
-                currentTime -= 0.1f;
+                currentTime -= 1;
                 timeAsText = currentTime.ToString();
                 screenTimer.text = timeAsText;
                 seconds = 60;
