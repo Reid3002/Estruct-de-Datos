@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3961812950928498287}
   - component: {fileID: 3961812950928498286}
   - component: {fileID: 3961812950928498273}
+  - component: {fileID: 8405580723854853233}
   m_Layer: 6
   m_Name: Obstacle Wall
   m_TagString: Obstacle
@@ -133,3 +134,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8405580723854853233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3961812950928498272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa1efd9a349cdb4eb85203d5d3e64ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
