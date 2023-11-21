@@ -27,15 +27,14 @@ public class Enemy : EnemyController
     private void Awake()
     {
         Manager = gameManager.GetComponent<GameManager>();
-        dijkstra = gameObject.GetComponent<Dijkstra>();
-        gameManager.GetComponent<EnemyQueue>().Enqueue(this.gameObject);
+        dijkstra = gameObject.GetComponent<Dijkstra>();        
         this.currentStepTime = this.stepTime;        
         
     }
 
     private void Start()
     {
-        
+        gameManager.GetComponent<EnemyQueue>().Enqueue(this.gameObject);
     }
 
     // Update is called once per frame
