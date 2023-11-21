@@ -2,14 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
-public class LevelNode : ABBNode<Scene>
+[CreateAssetMenu(fileName = "Level", menuName = "ScriptableObjects/Level")]
+public class LevelNode : ScriptableObject
 {
-    new public int index;
-    public Scene scene;
-    public int level;    
+    public int id;
+    public string sceneName;
+    public int index;
+    public int level;
 
 
-    new public IABB leftChild;
-    new public IABB rightChild;
+    public IABB leftChild;
+    public IABB rightChild;
+
+    public LevelNode(int cid, string clevelName, int cindex, int clevel)
+    {
+        id = cid;
+        sceneName = clevelName;
+        index = cindex;
+        level = clevel;       
+
+    }
+
 }

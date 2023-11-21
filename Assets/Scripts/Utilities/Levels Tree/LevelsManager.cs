@@ -2,17 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class LevelsManager : MonoBehaviour
 {
+    private LevelsABB tree;
     public bool active = false;
     private int currentLevel = 1;
-    private Scene nextLevel;
-    public int score;
-   
+    public LevelNode[] GameLevels;
+    private string nextLevel;
+    public int score =10;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+        tree = new LevelsABB();
+        tree.InitializeTree();
+    }
     // Start is called before the first frame update
     void Start()
     {
+        if (GameLevels != null)
+        {
+            for (int i = 0; i < GameLevels.Length; i++)
+            {
+                tree.AddNode(GameLevels[i].id,GameLevels[i].sceneName, GameLevels[i].index, GameLevels[i].level);
+                LevelNode root = tree.Root();
+                Debug.Log("Level loaded");
+            }
+        }
+        else { Debug.Log("No levels to load into the tree"); }
         
     }
 
@@ -22,19 +41,25 @@ public class LevelsManager : MonoBehaviour
         if (active)
         {
             NextLevelCalc();
-            SceneManager.LoadScene(nextLevel.name);
+            SceneManager.LoadScene(nextLevel);
+            currentLevel++;
             active = false;
         }
     }
 
     private LevelNode[] LevelOrder( LevelNode node)
     {
+        Debug.Log(node);
         int level = 0;
         int i = 0;
         Queue<LevelNode> availableLevels = new Queue<LevelNode>();
-        LevelNode[] elegibleLevels = new LevelNode[100];
+        Queue<LevelNode> temp = new Queue<LevelNode>();
+        LevelNode[] elegibleLevels;
 
-        availableLevels.Enqueue(node);
+        //if (node != null)
+        //{
+            availableLevels.Enqueue(node);
+        //}       
 
         while (availableLevels.Count > 0 && level != (2^(currentLevel-1)-1))
         {             
@@ -42,18 +67,18 @@ public class LevelsManager : MonoBehaviour
 
             if (node.level > currentLevel)
             {
-                elegibleLevels[i] = node;
+                temp.Enqueue(node);
                 i++;
             }           
 
-            if (node.leftChild != null)
+            if (node.leftChild.Root() != null)
             {
-                availableLevels.Enqueue(node.leftChild as LevelNode);
+                availableLevels.Enqueue(node.leftChild.Root());
             }
 
-            if (node.rightChild != null)
+            if (node.rightChild.Root() != null)
             {
-                availableLevels.Enqueue(node.rightChild as LevelNode);
+                availableLevels.Enqueue(node.rightChild.Root());
             }
 
             level++;
@@ -66,39 +91,42 @@ public class LevelsManager : MonoBehaviour
 
                 if (node.level > currentLevel)
                 {
-                    elegibleLevels[i] = node;
+                    temp.Enqueue(node);
                     i++;
                 }
             }
         }
 
-        return elegibleLevels;
+        return elegibleLevels=temp.ToArray();
         
     }
 
     private void NextLevelCalc()
     {
-        LevelNode temp;
-        LevelNode[] Availablelevels = LevelOrder(gameObject.GetComponent<LevelsABB>().Root());
-
-        for (int i = 0; i < Availablelevels.Length - 1; i++)
-        {
-            for (int j = 0; j < Availablelevels.Length - i - 1; j++)
-            {
-                if (Availablelevels[j].index > Availablelevels[j + 1].index)
-                {
-                    temp = Availablelevels[j];
-                    Availablelevels[j] = Availablelevels[j + 1];
-                    Availablelevels[j + 1] = temp;
-                }
-            }
-        }
+        //LevelNode temp;
+        Debug.Log("Geting Availablelevels");        
+        LevelNode[] Availablelevels = LevelOrder(tree.Root());
+        Debug.Log("Availablelevels adquiered");
+        int targetScore=0;               
 
         for (int i = 0; i < Availablelevels.Length; i++)
         {
-            if (score > Availablelevels[i].index)
+            if (score > Availablelevels[i].index && targetScore < Availablelevels[i].index)
             {
-                nextLevel = Availablelevels[i].info;
+                targetScore = Availablelevels[i].index;
+            }
+            else if(score == Availablelevels[i].index && targetScore < Availablelevels[i].index)
+            {
+                targetScore = Availablelevels[i].index;
+            }
+        }
+
+        foreach(LevelNode node in Availablelevels)
+        {
+            if (node.index == targetScore)
+            {
+                nextLevel = node.sceneName;
+                break;
             }
         }
         

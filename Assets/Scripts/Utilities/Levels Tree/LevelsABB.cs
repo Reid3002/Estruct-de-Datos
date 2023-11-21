@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
-public class LevelsABB : MonoBehaviour, IABB
+public class LevelsABB : ScriptableObject, IABB
 {
     LevelNode root;
 
@@ -28,25 +29,33 @@ public class LevelsABB : MonoBehaviour, IABB
         return root.rightChild;
     }
 
-    public void AddNode(Scene level, int index)
+    public void AddNode(int id, string sceneName, int index, int level)
     {
         if (root == null)
         {
-            root = new LevelNode();
-            root.index = index;
-            root.info = level;
+            root = new LevelNode(id, sceneName, index, level);
             root.leftChild = new LevelsABB();
             root.leftChild.InitializeTree();
             root.rightChild = new LevelsABB();
             root.rightChild.InitializeTree();
         }
-        else if (root.index > index)
+        else if (index < root.index)
         {
-            root.leftChild.AddNode(level,index);
+            if (root.leftChild == null)
+            {
+                root.leftChild = new LevelsABB();
+                root.leftChild.InitializeTree();
+            }
+            root.leftChild.AddNode(id, sceneName, index, level);
         }
-        else if (root.index < index)
+        else if (index > root.index)
         {
-            root.rightChild.AddNode(level, index);
+            if (root.rightChild == null)
+            {
+                root.rightChild = new LevelsABB();
+                root.rightChild.InitializeTree();
+            }
+            root.rightChild.AddNode(id, sceneName, index, level);
         }
     }
 

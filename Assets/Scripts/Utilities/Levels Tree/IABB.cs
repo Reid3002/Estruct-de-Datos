@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public interface IABB
 {
@@ -14,7 +15,7 @@ public interface IABB
 
     void InitializeTree();
 
-    void AddNode(Scene node, int index);
+    void AddNode(int id, string levelName, int index, int level);
 
     void RemoveNode(int index);
 }
