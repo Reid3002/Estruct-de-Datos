@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-
+using static EdibleController;
 
 public class ShowScores : MonoBehaviour
 {
@@ -13,18 +14,15 @@ public class ShowScores : MonoBehaviour
     void Awake()
     {
         text = gameObject.GetComponent<Text>();
-        scores = new int[EdibleScoreboard.EdibleScores.Count];
-        for (int i = 0; i < scores.Length; i++)
-        {
-            scores[i] = EdibleScoreboard.EdibleScores[i].score;
-        }
+        Dictionary<EdibleType, int> scores = new Dictionary<EdibleType, int>();
 
-        for (int i = 0; i < scores.Length; i++)
-        {
-            text.text += EdibleScoreboard.EdibleScores[i].type.ToString() + ": " + scores[i].ToString() + "\n";
-        }
+        for (int i = 0; i < EdibleScoreboard.EdibleScores.Count; i++)
+            scores.Add(EdibleScoreboard.EdibleScores[i].type, EdibleScoreboard.EdibleScores[i].score);
+
+        var sortedDict = from score in scores orderby score.Value descending select score;
+
+        text.text += "\n";
+        foreach (var score in sortedDict)
+            text.text += score.Key + ": " + score.Value + "\n";
     }
-
-    // Update is called once per frame
-
 }

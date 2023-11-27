@@ -501,6 +501,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1224416697, guid: d05895b89ff63dc4ab0f33eb4bb147bd, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1522685254, guid: d05895b89ff63dc4ab0f33eb4bb147bd, type: 3}
       propertyPath: levelsManager
       value: 
